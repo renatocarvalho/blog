@@ -1,0 +1,19 @@
+.recent-articles
+  - featured_article = blog.articles[0]
+  %article.featured
+    %h1= link_to featured_article.title, featured_article.url
+    %time= featured_article.date.strftime('%B %e, %Y')
+    .summary= featured_article.summary
+    .tags
+      %h3 Published to
+      %ul
+        - featured_article.tags.each do |tag|
+          %li= link_to tag, tag_path(tag)
+
+  - blog.articles[1...10].each do |article|
+    %article.recent
+      %h2= link_to article.title, article.url
+
+      .post
+        = article.summary
+        //%time= "Entry added on #{article.date.strftime('%B %e, %Y')}"

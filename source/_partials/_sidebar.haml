@@ -1,0 +1,27 @@
+%aside#sidebar
+
+  %h2 Hello
+
+  #author-bio
+    = image_tag 'http://0.gravatar.com/avatar/3bcfa1481ddfb92c8deeae3846826792', :width => '70'
+    %p I write things about art, design, programming and other geekery.
+    %ul.icons
+      %li= link_to '', 'https://twitter.com/jamesflorentino', :class => 'twitter icon'
+      %li= link_to '', 'https://github.com/jamesflorentino', :class => 'github icon'
+      %li= link_to '', 'http://dribbble.com/jamesflorentino', :class => 'dribbble icon'
+      %li= link_to '', 'http://stackoverflow.com/users/1089685/james-florentino', :class => 'stackoverflow icon'
+
+  %h3 Recent Articles
+  %ul
+    - blog.articles[0...10].each do |article|
+      %li
+        %a{:href => article.url}= article.title
+        //%span= article.date.strftime('%b %e')
+
+  %h3 Topics
+  %ul
+    - blog.tags.each do |tag, articles|
+      %li
+        %a{:href => "/#{tag_path(tag)}"}
+          = tag
+        %span="(#{articles.size})"

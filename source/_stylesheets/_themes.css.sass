@@ -1,0 +1,232 @@
+//=========================================================
+// Basic Reset
+//=========================================================
+
+body
+  $repeat: url(/images/background_dot.png) top left
+  $space: url(/images/background.png) center top no-repeat
+  $bottom: url(/images/background-bottom.png) center bottom no-repeat
+  background: $bottom, $space, $repeat
+  height: 100%
+
+*
+  &::selection
+    color: black
+    background: $time-color
+
+h1
+  color: white
+  font-weight: 500
+  @extend ._glowing-text
+  @extend ._border-bottom
+
+h2
+  color: white
+  font-weight: 500
+  @extend ._border-bottom
+  @extend ._glowing-text
+
+h3
+  color: white
+  font-weight: 600
+
+h4
+  color: white
+  font-weight: 600
+  @extend ._glowing-text
+
+p
+  font-weight: 300
+
+p a
+  font-weight: 300
+
+a
+  text-decoration: none
+  &:hover
+    +text-shadow(0 0 10px rgba($border-color,1))
+
+ul li a, ol li a
+  border-bottom: 1px solid rgba($border-color, 0.25)
+
+time
+  color: $time-color
+
+blockquote
+  margin: 0
+  color: $font-color
+  border-left: 5px solid rgba($border-color, 0.1)
+  padding: 0
+    left: +span(0.5)
+    right: +span(0.5)
+  margin-left: +span(0.5)
+
+
+code
+  border: 1px solid rgba($border-color, 0.25)
+  background: black
+  display: inline-block
+  padding: 0 2px 0 2px
+  color: white
+
+pre code
+  padding: 15px
+  display: block
+
+
+//=========================================================
+// Banner
+//=========================================================
+#banner
+  $image: 'asset/logo.png'
+  $logo-width: +image-width($image)
+  $logo-height: +image-height($image)
+  img, embed
+    position: absolute
+    top: 0
+    left: 0
+    width: $logo-width
+    height: $logo-height
+  h1
+    padding-left: 0
+  h1, h1 a
+    overflow: hidden
+    width: $logo-width
+    height: $logo-height
+    border: 0
+  h1 a
+    width: $logo-width
+    height: 0px
+    display: block
+    padding-top: $logo-height
+    position: relative
+  p
+    font-family: 'Play', sans-serif
+    position: relative
+    top: -15px
+    left: +span(1.25)
+
+
+//=========================================================
+// Menu
+//=========================================================
+#menu
+  a
+    text-decoration: none
+    font-weight: bold
+
+//=========================================================
+// Menu
+//=========================================================
+#sidebar
+
+
+//=========================================================
+// article template
+//=========================================================
+article
+  time
+    display: block
+  nav
+    border-top: 1px solid rgba($border-color, 0.1)
+    li
+      display: inline-block
+      font-weight: 600
+    li.read-more
+      a:after
+        content: '  \25B8'
+
+//=========================================================
+// author biography
+//=========================================================
+#authorbio
+  .icons
+    display: block
+
+  .icons li
+    +reset-box-model()
+    $radius: +span(1)
+    +border-radius($radius)
+    width: $radius
+    height: $radius
+    text-align: center
+    display: inline-block
+
+//=========================================================
+// Footer
+//=========================================================
+
+
+//=========================================================
+// Front page
+//=========================================================
+.recent-articles
+  article img
+    max-width: +span(3)
+    float: left
+    vertical-align: text-top
+    margin-right: +span(0.5)
+    margin-bottom: +span(0.5)
+
+//=========================================================
+// Entry
+//=========================================================
+.entry
+  ol, ul
+    +prepend(0.5)
+  li
+    display: list-item
+    padding: 0
+  .article-tags
+    h3
+      border: 0
+      display: inline-block
+      height: auto
+      display: none
+    ul
+      display: inline-block
+    li
+      display: inline-block
+      padding: 0
+        right: 10px
+  time, .article-tags
+    line-height: 30px
+  hr.clear
+    background: transparent
+    border-color: transparent
+  .post
+    display: block
+
+//=========================================================
+// Others
+//=========================================================
+#main,
+#sidebar,
+#footer
+  border-top: 5px solid rgba($border-color, 0.25)
+  @extend ._border-bottom
+
+#main article,
+#sidebar
+  position: relative
+  margin-bottom: 10px
+  position: relative
+
+#main,
+#sidebar
+  $linear-gradient: linear-gradient(rgba(black, 0.5), rgba(black, 0.1))
+  +background($linear-gradient)
+
+
+#sidebar,
+.tags
+  li
+    +prepend(0.25)
+    border-left: 3px solid rgba($border-color, 0.25)
+    margin-bottom: +span(0.4)
+    &:hover
+      border-left-color: $border-color
+      background-color: rgba($border-color, 0.05)
+  a
+    text-decoration: none
+

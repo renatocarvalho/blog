@@ -1,0 +1,36 @@
++font-face('james icons', font-files('/images/jamesicon.ttf', '/images/jamesicon.svg'))
+
+body
+  -webkit-text-stroke: 0.35px
+
+//h1, h2, h3
+  font-family: Exo, Helvetica Neue, Helvetica, Arial, sans-serif
+
+a.icon
+  font-family: 'james icons'
+  font-size: 18px
+  line-height: 30px
+  border: none
+  color: $border-color
+  &:hover
+    color: white
+
+.twitter:after
+  content: 't'
+
+.dribbble:after
+  content: 'd'
+
+.stackoverflow:after
+  content: 's'
+
+.github:after
+  content: 'g'
+
+#footer
+  font-size: 0.9em
+
+article.entry
+  p
+    font-size: 1.1em
+
