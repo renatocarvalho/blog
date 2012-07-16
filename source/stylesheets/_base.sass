@@ -1,15 +1,29 @@
-@import blueprint
-@import blueprint/typography
-@import blueprint/grid
+// ====================================================
+// Font families
+// ====================================================
+$blueprint-font-family: Lato, Helvetica Neue, Arial, sans-serif
+$blueprint-font-family: Exo, Helvetica Neue, Arial, sans-serif
+$blueprint-font-size: 13px
+$font-family-body: Lato, Helvetica Neue, Arial, sans-serif
 
-// ========================================
-// Colors and Font sizes
-// ========================================
+// ====================================================
+// Colors
+// ====================================================
 
-$blueprint-font-family : Lato
-$blueprint-font-size   : 14px
-
-$font-color: #cff
-$link-color: #ff9
-$link-active-color: lighten(adjust-hue($link-color, 75deg), 10%)
+$title-color: white
+$font-color: #9bb
+$link-color: #cc9
+$link-color: #ddc
+$code-color: #eff
+$border-color: #9c9
+$link-hover-color: lighten($link-color, 100%)
+$link-active-color: lighten($link-color, 1)
 $link-visited-color: darken($link-color, 10%)
+
+// ====================================================
+// Grid
+// ====================================================
+$total-columns: 24
+$column-width: 30px
+$gutter-width: 10px
+$grid-padding: 10px

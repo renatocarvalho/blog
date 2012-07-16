@@ -1,6 +1,7 @@
 ---
 title: Working with Icon Fonts
 date: 2012-07-15 17:59 +08:00
+thumb: james.png
 tags: css, workflow, code
 ---
 We're entering into an age in computers where high definition displays are becoming mainstream. While not really an immediate concern for website owners since it's fairly new, some designers are adapting early such as myself. In this article, I'll be showing you how I managed to setup my workflow in testing, building and deploying icon fonts. This guide requires some intermediate knowledge in computers. READMORE

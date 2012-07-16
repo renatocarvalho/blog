@@ -1,5 +1,86 @@
-// ========================================
-// Container
-// ========================================
+// ====================================================
+// box-models, heights, widths, margins, paddings
+// should be specified here...
+// ====================================================
+body
+  padding: 0
+  margin: 0
+
+
+h1, h2, h3, h4, h5, h6
+  +reset()
+  +preserve()
+
+h1
+  padding-top: +span(1)
+
+h2
+  padding-top: +span(1)
+
+h3
+  height: +span(1.25)
+
+h4
+  height: +span(1)
+
+h5
+  height: +span(1)
+
+code
+  padding: 3px
+    top: 1px
+    bottom: 1px
+
+pre code
+  display: block
+  padding: +span(0.5)
+
+blockquote
+  +preserve()
+  +prefix(1)
+
 .container
   +container()
+  //+susy-grid-background()
+
+#banner
+  +span-columns(18)
+  +preserve()
+  padding-top: 65px
+  padding-top: 170 / 1.61px
+  height: 170px
+  
+  .description
+    position: relative
+    top: -20px
+    left: 40px
+
+#menu
+  +span-columns(6 omega)
+  +preserve()
+  height: 170px
+  padding-top: 65px
+
+#main
+  +span-columns(18)
+  +preserve()
+  +prefix(1)
+  +suffix(1)
+
+#sidebar
+  +span-columns(6 omega)
+  +preserve()
+  +prefix(0.25)
+  +suffix(0.25)
+
+#footer
+  +span-columns(24)
+  +prefix(1)
+  height: +span(7)
+
+
+.tags
+  li
+    +prefix(0.5)
+
+

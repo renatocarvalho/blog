@@ -1,11 +1,134 @@
+@import compass/css3
+@import susy
 @import base
+@import mixins
 @import layout
+@import blueprint/typography
+
++blueprint-typography()
 
 // ========================================
-// Basic styles
+// Visual Mixins
 // ========================================
+
+=border-bottom-ruler
+  border-bottom: 1px solid rgba($border-color, 0.25)
+
+// ========================================
+// Classes
+// ========================================
+._gradient-background
+  $direction: 50% 0%
+  $top: rgba(black, 0.25)
+  $bottom: rgba(black, 0)
+  +background-image(linear-gradient($direction, $top, $bottom))
+
+// ========================================
+// font-size, colors, css3 stuff can be
+// placed here.
+// ----------------------------------------
+// For paddings, margins, heights, widths
+// please write to _layout.sass
+// ----------------------------------------
+// For base colors, please refer to 
+// _base.sass
+// ========================================
+
 body
   $img-top: url(/images/background.png) center top no-repeat
   $img-repeat: url(/images/background_dot.png) center top
   $img-bottom: url(/images/background-bottom.png) center bottom no-repeat
   background: $img-bottom, $img-top, $img-repeat
+  font-weight: 300
+
+h1
+  font-size: 2em
+  +border-bottom-ruler()
+
+h2
+  font-size: 1.5em
+  +border-bottom-ruler()
+
+h3
+  font-size: 1.25em
+  text-transform: uppercase
+  line-height: +span(1.25)
+  +border-bottom-ruler()
+
+h4
+  font-size: 1em
+  line-height: +span(1)
+  text-transform: uppercase
+  +border-bottom-ruler()
+
+h6
+  font-weight: 500
+
+p
+  color: darken($font-color, 0.1)
+
+a
+  text-decoration: none
+  border-bottom: 1px solid rgba($link-color, 0.25)
+
+code
+  color: $code-color
+  background: rgba(black, 0.5)
+  border: 1px solid rgba($border-color, 0.25)
+
+
+blockquote
+  border-left: 3px solid rgba($border-color, 0.25)
+
+h1, h2, h3, h4, h5, h6
+  +text-shadow(0 0 15px $border-color)
+  color: $title-color
+  a
+    text-decoration: none
+    color: inherit
+    &:visited,
+    &:active
+      color: inherit
+
+.enter
+
+// ====================================================
+// banner
+// ====================================================
+#banner
+  .logo a
+    border: 0
+  .description
+    text-transform: uppercase
+    font-weight: 300
+    font-size: 0.9em
+    letter-spacing: 0.1em
+    color: #cee
+    
+
+#footer
+  font-size: 0.8em
+
+#main,
+#sidebar
+  @extend ._gradient-background
+  border-top: 3px solid rgba($border-color, 0.5)
+
+#menu
+  ul
+    +reset()
+  li
+    +reset()
+    display: inline-block
+    margin-right: 10px
+    text-transform: uppercase
+  a
+    text-decoration: none
+
+.tags
+  ul
+    display: block
+  li
+    display: inline-block
+  a
+    color: $title-color

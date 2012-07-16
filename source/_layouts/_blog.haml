@@ -4,40 +4,40 @@
     = partial '_partials/head', :locals => {:title => current_page.title }
 
   %body
+
     .container
+
       = partial '_partials/header'
       = partial '_partials/menu'
+
       #main.entry{:role => "main"}
+
         %article
           %h1= current_page.title
-          / ----------------------
-          / time of posting
-          / ---------------
-          %time= current_page.date.strftime('%B %e, %Y')
-          / ----------------------
+
           / tags and related links
-          / ----------------------
-          .article-tags
-            %h3 Published to
+          .tags
+            %h6 Published under:
             %ul
               - current_page.tags.each do |tag|
                 %li= link_to tag, tag_path(tag)
-          / --------
+
+          / time of posting
+          %time= current_page.date.strftime('%B %e, %Y')
+  
           / comments
-          / --------
           .post= yield
           %h2 Comments and Reactions
           #disqus_thread 
+
       = partial '_partials/sidebar'
       = partial '_partials/footer'
 
 :javascript
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'jamesflorentino'; // required: replace example with your forum shortname
-
-  /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    return;
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
