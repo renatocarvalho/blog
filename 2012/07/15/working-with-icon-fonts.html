@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible' />
+<title>Working with Icon Fonts - James Florentino</title>
+<script src='http://code.jquery.com/jquery-1.7.2.min.js' type='text/javascript'></script>
+<link href="/images/favicon.ico" rel="icon" type="image/ico" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="/javascripts/all.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class='container'>
+      <header id='banner'>
+        <div class='logo'>
+          <a alt='logo' href='/'>
+            <img alt="logo" src="/images/asset/logo.png" />
+          </a>
+        </div>
+        <p class='description'>Front-end Design &amp; Engineering</p>
+      </header>
+      <nav id='menu'>
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+        </ul>
+      </nav>
+      <div class='entry' id='main' role='main'>
+        <article>
+          <h1>Working with Icon Fonts</h1>
+          <div class='tags'>
+            <h6>Published under:</h6>
+            <ul>
+              <li><a href="/tags/css.html">css</a></li>
+              <li><a href="/tags/workflow.html">workflow</a></li>
+              <li><a href="/tags/code.html">code</a></li>
+            </ul>
+          </div>
+          <time>July 15, 2012</time>
+          <div class='post'><p>Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp on these devices.</p>
+
+<p>Some suggested creating two sets of images, while others use the <code>&lt;svg&gt;</code> tag. In my case, I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs <sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup> and then use them as fonts in the <code>@font-family</code> css rule.</p>
+
+<p>The reason why I didn&#8217;t go with the SVG route is because I needed to be able to minimize http requests <sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup> and also not clutter my HTML templating with a bunch of <code>&lt;svg&gt;</code> tags.</p>
+
+<p></p>
+
+<blockquote>
+<p>Disclaimer: Most of what I&#8217;m writing here are lessons taught by experience. If there&#8217;s a more efficient way, you can <a href='http://twitter.com/jamesflorentino'>tweet</a> me about it and i&#8217;ll update this article and gladly credit you. We&#8217;re also going to use the command a lot.</p>
+</blockquote>
+
+<h2 id='table_of_contents'>Table of Contents</h2>
+
+<ol>
+<li><a href='#required'>Required Applications</a></li>
+
+<li><a href='#installation'>Installation</a></li>
+
+<li><a href='#create-icons'>Creating Icons</a></li>
+
+<li><a href='#font-mapping'>Creating the font library in Inkscape</a></li>
+
+<li><a href='#css-html-generation'>CSS and HTML Integration</a></li>
+
+<li><a href='#converting-in-fontforge'>Converting SVG files in FontForge</a></li>
+</ol>
+
+<h2 id='required'>Required Applications</h2>
+
+<ul>
+<li><a href='http://inkscape.org/'>Inkscape</a></li>
+
+<li><a href='http://fontforge.sourceforge.net/'>Fontforge</a></li>
+</ul>
+
+<h2 id='installation'>Installation</h2>
+
+<p>We&#8217;ll be using Inkscape to define our <a href='http://en.wikipedia.org/wiki/Glyph'>glyphs</a> in an SVG file. Installing this is pretty straightforward so go ahead and download it <sup id='fnref:3'><a href='#fn:3' rel='footnote'>3</a></sup>.</p>
+
+<p>Fontforge is going to be responsible for converting our SVG file to different formats (ttf, otf, woff, etc.).</p>
+
+<p>Installing FontForge can be <em>a bit</em> tricky. You can either compile from source or use <a href='http://mxcl.github.com/homebrew/'>homebrew</a>. I highly suggest the latter because it saves you the stress and horror of installing library dependencies yourself.</p>
+
+<p>If you choose to go the less masochistic route, go install homebrew in your system. You can find more about it at their home page.</p>
+
+<p>After homebrew&#8217;s installed, let&#8217;s go ahead and pull FontForge into our system:</p>
+
+<pre><code>$ brew install fontforge</code></pre>
+
+<p>If that fails due to permission errors you need to use <code>sudo</code> (super user do), then enter your password.</p>
+
+<pre><code>$ sudo brew install fontforge</code></pre>
+
+<p>Take note of the installation process. Because sometimes it fails due to a server response error. If that happens, just try again. Mine took 5 attempts.</p>
+
+<h2 id='create-icons'>Create your Icons</h2>
+
+<p>Now go ahead and create your icons in either Illustrator or Inkscape. They need to be flat and not have any transparencies and gradients. Once you&#8217;re done, make sure each icon is a single path object because we&#8217;re going to make that as a font. Save your document as SVG (<code>font-icons.svg</code>).</p>
+
+<h2 id='font-mapping'>Creating the font library in Inkscape</h2>
+
+<p>Open up Illustrator and create a 1000px by 1000px blank document. Then choose <code>File -&gt; Import</code> or <code>ctrl+i</code> and choose the <code>font-icons.svg</code> file we saved earlier.</p>
+
+<ol>
+<li>Open up <code>Text -&gt; SVG Font Editor</code>.</li>
+
+<li>On the SVG Font Editor panel, Click <code>new</code> then set the family name to <code>CoolFonts</code> (click the Font 1 name on the left side first)</li>
+
+<li>Click on the <code>Glyphs</code> tab then click <code>Add Glyph</code>.</li>
+
+<li>Let&#8217;s name this one as <code>cool</code> and map this to <code>q</code>.</li>
+
+<li>Select one of your icons in the document, scale to full then align it center bottom.</li>
+
+<li>Then on the SVG font editor, click <code>Get curves from selection...</code></li>
+
+<li>Change the preview text value to <code>q</code> to see if successful.</li>
+
+<li>If your icon appeared on the preview, then you&#8217;re good to go. Go and save it as <code>coolfonts.svg</code></li>
+</ol>
+
+<p>Now let&#8217;s proceed and add this new SVG file to our HTML and CSS File.</p>
+
+<h2 id='css-html-generation'>CSS and HTML integration</h2>
+
+<p>In this section, I&#8217;ll be using Chrome for debugging since it can use SVG as its font source. You should place your <code>font-icon.svg</code> inside a <code>/fonts/</code> folder in your project directory.</p>
+
+<h3 id='css'>CSS</h3>
+
+<pre><code>@font-face {
+  font-family: &quot;CoolFonts&quot;;
+  src: url(fonts/coolfonts.svg) format(&#39;svg&#39;); 
+}
+
+a.icon {
+  font-family: &#39;CoolFonts&#39;;
+}
+
+a.cool.icon:after {
+  content: &#39;q&#39;;
+}</code></pre>
+
+<h3 id='html'>HTML</h3>
+
+<pre><code>&lt;a class=&quot;cool icon&quot;&gt;&lt;/a&gt;</code></pre>
+
+<p>If that worked for you then great job! You make the universe proud.</p>
+
+<p>You&#8217;ll now be using SVG fonts for debugging. Open up your <code>/fonts/coolfonts.svg</code> in Inkscape and do some changes, and it&#8217;ll reflect on your page when you refresh. Good deal. Now let&#8217;s move on to converting them to font files.</p>
+
+<h2 id='converting-in-fontforge'>Converting SVG files in FontForge</h2>
+
+<p><a href='http://caniuse.com/#search=ttf'>TTF support</a> is available to most browsers. So let&#8217;s use this format for now. Open up your terminal again and change directory to your project.</p>
+
+<pre><code>$ cd my_project/fonts/</code></pre>
+
+<p>Next, we&#8217;ll create a <a href='http://en.wikipedia.org/wiki/PerlScript'>PerlScript</a> to run FontForge&#8217;s CLI. Create a <code>convert.pe</code> file with your favorite text editor and type this in:</p>
+
+<pre><code>#!/usr/local/bin/fontforge
+Open($1)
+Generate($1:r + &quot;.ttf&quot;)</code></pre>
+
+<p>This script basically runs FontForge and performs the Open and Generate command with <code>$1</code> being the filename you&#8217;ll be specifying later. Go ahead and save it then switch back to your terminal and type in:</p>
+
+<pre><code>$ fontforge -script convert.pe fonts/coolfonts.svg</code></pre>
+
+<p>If all things turn good, you&#8217;ll be able to see the generated <code>coolfonts.ttf</code> file. Go back and edit the css file we had earlier and update it with:</p>
+
+<pre><code>@font-face {
+  font-family: &quot;CoolFonts&quot;;
+  src:
+    url(fonts/coolfonts.svg) format(&#39;svg&#39;),
+    url(fonts/coolfonts.ttf) format(&#39;ttf&#39;);
+}
+
+a.icon {
+  font-family: &#39;CoolFonts&#39;;
+}
+
+a.cool.icon:after {
+  content: &#39;q&#39;;
+}</code></pre>
+
+<p>To see if this worked, try viewing your page in either Opera or Firefox (both of which doesn&#8217;t support SVG as fonts). If all is good, then you&#8217;ll see your icon there instead of the &#8216;q&#8217; character.</p>
+
+<p>So, whenever you need to update or add icons to your coolfonts.svg file:</p>
+
+<ol>
+<li>Open up your <code>coolfonts.svg</code> file in InkScape.</li>
+
+<li>Perform necessary edits. Use Chrome to preview updates done in SVG.</li>
+
+<li>Run the fontforge command once you&#8217;re done with the changes.</li>
+</ol>
+
+<p>To make things easier, let&#8217;s create a <code>makefile</code> and put the fontforge script:</p>
+
+<pre><code>all:
+  fontforge -script convert.pe fonts/coolfonts.svg</code></pre>
+
+<p>Now whenever we need to publish the SVG files to TTF, all we have to do is type <code>make</code> in the terminal and it&#8217;ll perform the fontforge script we made earlier.</p>
+
+<h2 id='final-thougths'>Final Thoughts</h2>
+
+<p>Well that certainly wasn&#8217;t a walk in the park, especially if you didn&#8217;t have command line experience before this. But if ever you reached all this way, congrats for levelling up your technical experience and for not giving up. Now be proud of yourself. Go out and have beer or something.</p>
+
+<blockquote>
+<p>Laugh and the world laughs with you, snore and you sleep alone.</p>
+</blockquote>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>You can see an example of this technique in <a href='https://github.com/FortAwesome/Font-Awesome'>FontAwesome</a>&#8217;s <a href='http://fortawesome.github.com/Font-Awesome/'>demo page</a>.</p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li><li id='fn:2'>
+<p>Similar to how we <a href='http://www.w3schools.com/css/css_image_sprites.asp'>sprite</a> our PNG icons.</p>
+<a href='#fnref:2' rev='footnote'>&#8617;</a></li><li id='fn:3'>
+<p>Installing this requires X11 in your machine if you&#8217;re on a Mac OS.</p>
+<a href='#fnref:3' rev='footnote'>&#8617;</a></li></ol></div></div>
+          <h2>Comments and Reactions</h2>
+          <div id='disqus_thread'></div>
+        </article>
+      </div>
+      <aside id='sidebar'>
+  <h3>Recent Articles</h3>
+  <ul>
+    <li>
+      <a href='/2012/07/15/working-with-icon-fonts.html'>Working with Icon Fonts</a>
+      <!-- /%span= article.date.strftime('%b %e') -->
+    </li>
+    <li>
+      <a href='/2012/07/14/golden-rectangle-in-web-design.html'>The Golden Rectangle</a>
+      <!-- /%span= article.date.strftime('%b %e') -->
+    </li>
+    <li>
+      <a href='/2012/07/11/welcome-to-my-blog.html'>Hello, Universe.</a>
+      <!-- /%span= article.date.strftime('%b %e') -->
+    </li>
+  </ul>
+  <h3>Topics</h3>
+  <ul>
+    <li>
+      <a href='/tags/opinions.html'>
+        opinions
+      </a>
+      <span>(1)</span>
+    </li>
+    <li>
+      <a href='/tags/design.html'>
+        design
+      </a>
+      <span>(1)</span>
+    </li>
+    <li>
+      <a href='/tags/css.html'>
+        css
+      </a>
+      <span>(2)</span>
+    </li>
+    <li>
+      <a href='/tags/workflow.html'>
+        workflow
+      </a>
+      <span>(1)</span>
+    </li>
+    <li>
+      <a href='/tags/code.html'>
+        code
+      </a>
+      <span>(1)</span>
+    </li>
+  </ul>
+  <div id='author-bio'>
+    <h3>About James</h3>
+    <img width="70" src="/images/profile.jpg" />
+    <p>I write things about art, design, programming and the web.</p>
+    <ul class='icons'>
+      <li><a class="twitter icon" href="https://twitter.com/jamesflorentino"></a></li>
+      <li><a class="github icon" href="https://github.com/jamesflorentino"></a></li>
+      <li><a class="dribbble icon" href="http://dribbble.com/jamesflorentino"></a></li>
+      <li><a class="stackoverflow icon" href="http://stackoverflow.com/users/1089685/james-florentino"></a></li>
+    </ul>
+  </div>
+  <h3>
+    <span class='twitter icon'></span>
+    Recent Tweets
+  </h3>
+  <div class='tweets'>
+    <ul></ul>
+  </div>
+  <h3>Random Dribble Shot</h3>
+  <div class='dribbble-shot'>
+    <a class='teaser'></a>
+    <a class='title'></a>
+  </div>
+</aside>
+      <footer id='footer'>
+            <span class='copyright'>&copy; 2004 - 2012 James Florentino. Some Rights Reserved.</span>
+            <a target="_blank" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons BY-NC.</a>
+            <div class='credits'>
+              This static blog is built with <a target="_blank" href="http://middlemanapp.com/">Middleman</a>.
+              Hosting provided by <a target="_blank" href="http://github.com/jamesflorentino/blog">Github</a>
+              .
+            </div>
+          </footer>
+    </div>
+  </body>
+</html>
+<script type='text/javascript'>
+  //<![CDATA[
+    var disqus_shortname = 'jamesflorentino'; // required: replace example with your forum shortname
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  //]]>
+</script>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+<meta content='IE=edge;chrome=1' http-equiv='X-UA-Compatible' />
+<title>The Golden Rectangle - James Florentino</title>
+<script src='http://code.jquery.com/jquery-1.7.2.min.js' type='text/javascript'></script>
+<link href="/images/favicon.ico" rel="icon" type="image/ico" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="/javascripts/all.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class='container'>
+      <header id='banner'>
+        <div class='logo'>
+          <a alt='logo' href='/'>
+            <img alt="logo" src="/images/asset/logo.png" />
+          </a>
+        </div>
+        <p class='description'>Front-end Design &amp; Engineering</p>
+      </header>
+      <nav id='menu'>
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+        </ul>
+      </nav>
+      <div class='entry' id='main' role='main'>
+        <article>
+          <h1>The Golden Rectangle</h1>
+          <div class='tags'>
+            <h6>Published under:</h6>
+            <ul>
+              <li><a href="/tags/design.html">design</a></li>
+              <li><a href="/tags/css.html">css</a></li>
+            </ul>
+          </div>
+          <time>July 14, 2012</time>
+          <div class='post'><p>I recall an episode in my life as a web designer where I&#8217;d continuously struggle (and most of the time fail) in doing layouts. I couldn&#8217;t think of a way to place all the pieces together without making it fall apart. This all changed when I started learning the foundation for design (and aesthetics).</p>
+
+<p></p>
+
+<p>If you&#8217;ve been doing a lot of digging into CSS frameworks like <a href='http://zurb.foundation.org'>Foundation</a>, <a href='http://blueprintcss.org/'>Blueprint</a> and <a href='http://compass-style.org'>Compass</a>, you&#8217;ll noticed that they all have their own typography, color sets, and grid systems.</p>
+
+<h2 id='design_involves_mathematics'>Design involves Mathematics</h2>
+
+<p>I used to think that being able to apply proportion and rhythm in design is measured by one&#8217;s innate ability. However true for some people<sup id='fnref:1'><a href='#fn:1' rel='footnote'>1</a></sup>, it turns out that you can be scientific/mathematical in this approach to attain a visually pleasing result<sup id='fnref:2'><a href='#fn:2' rel='footnote'>2</a></sup>.</p>
+
+<p>Let&#8217;s take a look at the <a href='http://en.wikipedia.org/wiki/Golden_ratio'>Golden Ratio</a>.</p>
+
+<h2 id='the_golden_ratio'>The Golden Ratio</h2>
+
+<p>It basically consists of two numerical values. One which is wider than the other but in a way that is proportionate to its sum with its smaller other. We can describe this simply in a math equation:</p>
+
+<pre><code>(a + b) / a = a + b</code></pre>
+
+<p>In web design, you can get the next proportionate neighbor by either multiplying or dividing its width value by 1.61803399. So for example, if you have 960px container, an ideal container for your content would be 593px since:</p>
+
+<pre><code>container = 960
+content = container / 1.61803399
+content = 593.31...</code></pre>
+
+<p>and for the sidebar the value would be 366px since:</p>
+
+<pre><code>content = 593
+sidebar = content / 1.61803399
+sidebar = 366.49....</code></pre>
+
+<p>We still end up with the original container width if add it up:</p>
+
+<pre><code>sidebar + content = container
+593.31 + 366.49 = 959.8</code></pre>
+
+<p>Whipping out a calculator everytime you&#8217;re prototyping a layout sounds tiresome, boring and certainly not fun. So what I did was to create a guide in Adobe Illustrator:</p>
+
+<p><img alt='Golden Grid Mock-up' src='https://dl.dropbox.com/u/2281027/blog/g-ratio-thumb.png' /></p>
+
+<p>If we take a look at the grid, You&#8217;ll see that it&#8217;s a series of squares repeating over in a spiral direction. In Mathematics, this is popularly known as the <a href='http://en.wikipedia.org/wiki/Fibonacci_number'>Fibonacci Sequence</a>. This creates a predictable <a href='http://en.wikipedia.org/wiki/Patterns_in_nature'>pattern that the natural world is fond of</a>. which explains, I think, the reason why humans are psychologically attracted to things that are proportionate.</p>
+
+<p><img alt='Golden Grid Highlighted' src='https://dl.dropbox.com/u/2281027/blog/g-ratio-highlighted-thumb.jpg' /></p>
+
+<p>From here, I&#8217;m able to quickly visualize and mock-up the placement of the elements. Here&#8217;s a fast comp I came up with for this example:</p>
+
+<p><img alt='Golden Grid Mock-up' src='https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample.jpg' /></p>
+
+<p>I think it looks decent enough. Let&#8217;s see what it looks like without the guide:</p>
+
+<p><img alt='Golden Grid Mock-up No-Grid' src='https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample-clean.jpg' /></p>
+
+<p>Not necesarrily an award winning layout but it works.</p>
+
+<p>So how do we apply this concept in front-end development? <a href='http://en.wikipedia.org/wiki/Grid_(page_layout'>Grids</a>.</p>
+
+<h2 id='grid'>Grid</h2>
+
+<p>A grid system is extremely helpful in rapid design to html/css prototyping. By specifying the <strong>total columns</strong>, the <strong>column width</strong>, and the <strong>gutter width</strong>, it makes it easier for the front-end developer to scaffold everything in place. This is also a design requirement in <a href='http://en.wikipedia.org/wiki/Responsive_Web_Design'>Responsive Web Design</a>.</p>
+
+<p>We can compare website design (and development) to something like designing and building a house. If you start with the right foundation, your house tends to last longer. Not to mention that it generates confidence and security to the people living in it.</p>
+
+<h2 id='where_to_start'>Where to start</h2>
+
+<p>I can only discuss this much. I highly recommend trying out <a href='http://blueprintcss.org'>Blueprint</a> which has a low learning curve and something that I&#8217;ve personally used in the past. A friend of mine suggested that the <a href='http://zurb.foundation.org'>Foundation</a> framework&#8217;s good too.</p>
+
+<p>I currently use <a href='http://compass-style.org'>Compass</a> and <a href='http://susy.oddbird.net/'>Susy</a> as my SASS/CSS framework.</p>
+
+<h2 id='final_thoughts'>Final Thoughts</h2>
+
+<p>Using grids can sometimes feel restricting. Especially if you&#8217;re trying to be different with standard layouts. But it helps a lot with getting things done and has proven useful by generations. In the end, I stick with it. Not because I don&#8217;t wanna try something new, but because I wanna get things done.</p>
+<div class='footnotes'><hr /><ol><li id='fn:1'>
+<p>Designers who can &#8216;guestimate&#8217; a layout that still looks aesthetically proportionate.</p>
+<a href='#fnref:1' rev='footnote'>&#8617;</a></li><li id='fn:2'>
+<p>Creativity still plays a vital role in most things.</p>
+<a href='#fnref:2' rev='footnote'>&#8617;</a></li></ol></div></div>
+          <h2>Comments and Reactions</h2>
+          <div id='disqus_thread'></div>
+        </article>
+      </div>
+      <aside id='sidebar'>
+  <h3>Recent Articles</h3>
+  <ul>
+    <li>
+      <a href='/2012/07/15/working-with-icon-fonts.html'>Working with Icon Fonts</a>
+      <!-- /%span= article.date.strftime('%b %e') -->
+    </li>
+    <li>
+      <a href='/2012/07/14/golden-rectangle-in-web-design.html'>The Golden Rectangle</a>
+      <!-- /%span= article.date.strftime('%b %e') -->
+    </li>
+    <li>
+      <a href='/2012/07/11/welcome-to-my-blog.html'>Hello, Universe.</a>
+      <!-- /%span= article.date.strftime('%b %e') -->
+    </li>
+  </ul>
+  <h3>Topics</h3>
+  <ul>
+    <li>
+      <a href='/tags/opinions.html'>
+        opinions
+      </a>
+      <span>(1)</span>
+    </li>
+    <li>
+      <a href='/tags/design.html'>
+        design
+      </a>
+      <span>(1)</span>
+    </li>
+    <li>
+      <a href='/tags/css.html'>
+        css
+      </a>
+      <span>(2)</span>
+    </li>
+    <li>
+      <a href='/tags/workflow.html'>
+        workflow
+      </a>
+      <span>(1)</span>
+    </li>
+    <li>
+      <a href='/tags/code.html'>
+        code
+      </a>
+      <span>(1)</span>
+    </li>
+  </ul>
+  <div id='author-bio'>
+    <h3>About James</h3>
+    <img width="70" src="/images/profile.jpg" />
+    <p>I write things about art, design, programming and the web.</p>
+    <ul class='icons'>
+      <li><a class="twitter icon" href="https://twitter.com/jamesflorentino"></a></li>
+      <li><a class="github icon" href="https://github.com/jamesflorentino"></a></li>
+      <li><a class="dribbble icon" href="http://dribbble.com/jamesflorentino"></a></li>
+      <li><a class="stackoverflow icon" href="http://stackoverflow.com/users/1089685/james-florentino"></a></li>
+    </ul>
+  </div>
+  <h3>
+    <span class='twitter icon'></span>
+    Recent Tweets
+  </h3>
+  <div class='tweets'>
+    <ul></ul>
+  </div>
+  <h3>Random Dribble Shot</h3>
+  <div class='dribbble-shot'>
+    <a class='teaser'></a>
+    <a class='title'></a>
+  </div>
+</aside>
+      <footer id='footer'>
+          <span class='copyright'>&copy; 2004 - 2012 James Florentino. Some Rights Reserved.</span>
+          <a target="_blank" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons BY-NC.</a>
+          <div class='credits'>
+            This static blog is built with <a target="_blank" href="http://middlemanapp.com/">Middleman</a>.
+            Hosting provided by <a target="_blank" href="http://github.com/jamesflorentino/blog">Github</a>
+            .
+          </div>
+        </footer>
+    </div>
+  </body>
+</html>
+<script type='text/javascript'>
+  //<![CDATA[
+    var disqus_shortname = 'jamesflorentino'; // required: replace example with your forum shortname
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  //]]>
+</script>

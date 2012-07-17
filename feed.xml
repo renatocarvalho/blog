@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog Name</title>
+  <subtitle>Blog subtitle</subtitle>
+  <id>http://blog.url.com/</id>
+  <link href="http://blog.url.com/"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2012-07-15T17:59:00+08:00</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>Working with Icon Fonts</title>
+    <link rel="alternate" href="/2012/07/15/working-with-icon-fonts.html"/>
+    <id>/2012/07/15/working-with-icon-fonts.html</id>
+    <published>2012-07-15T17:59:00+08:00</published>
+    <updated>2012-07-15T17:59:00+08:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <summary type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp on these devices.&lt;/p&gt;
+
+&lt;p&gt;Some suggested creating two sets of images, while others use the &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tag. In my case, I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
+
+&lt;p&gt;The reason why I didn&amp;#8217;t go with the SVG route is because I needed to be able to minimize http requests &lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; and also not clutter my HTML templating with a bunch of &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+
+&lt;p&gt;</summary>
+    <content type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp on these devices.&lt;/p&gt;
+
+&lt;p&gt;Some suggested creating two sets of images, while others use the &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tag. In my case, I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
+
+&lt;p&gt;The reason why I didn&amp;#8217;t go with the SVG route is because I needed to be able to minimize http requests &lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; and also not clutter my HTML templating with a bunch of &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Disclaimer: Most of what I&amp;#8217;m writing here are lessons taught by experience. If there&amp;#8217;s a more efficient way, you can &lt;a href='http://twitter.com/jamesflorentino'&gt;tweet&lt;/a&gt; me about it and i&amp;#8217;ll update this article and gladly credit you. We&amp;#8217;re also going to use the command a lot.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id='table_of_contents'&gt;Table of Contents&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='#required'&gt;Required Applications&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='#installation'&gt;Installation&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='#create-icons'&gt;Creating Icons&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='#font-mapping'&gt;Creating the font library in Inkscape&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='#css-html-generation'&gt;CSS and HTML Integration&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='#converting-in-fontforge'&gt;Converting SVG files in FontForge&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id='required'&gt;Required Applications&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://inkscape.org/'&gt;Inkscape&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://fontforge.sourceforge.net/'&gt;Fontforge&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='installation'&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;We&amp;#8217;ll be using Inkscape to define our &lt;a href='http://en.wikipedia.org/wiki/Glyph'&gt;glyphs&lt;/a&gt; in an SVG file. Installing this is pretty straightforward so go ahead and download it &lt;sup id='fnref:3'&gt;&lt;a href='#fn:3' rel='footnote'&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Fontforge is going to be responsible for converting our SVG file to different formats (ttf, otf, woff, etc.).&lt;/p&gt;
+
+&lt;p&gt;Installing FontForge can be &lt;em&gt;a bit&lt;/em&gt; tricky. You can either compile from source or use &lt;a href='http://mxcl.github.com/homebrew/'&gt;homebrew&lt;/a&gt;. I highly suggest the latter because it saves you the stress and horror of installing library dependencies yourself.&lt;/p&gt;
+
+&lt;p&gt;If you choose to go the less masochistic route, go install homebrew in your system. You can find more about it at their home page.&lt;/p&gt;
+
+&lt;p&gt;After homebrew&amp;#8217;s installed, let&amp;#8217;s go ahead and pull FontForge into our system:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ brew install fontforge&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If that fails due to permission errors you need to use &lt;code&gt;sudo&lt;/code&gt; (super user do), then enter your password.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo brew install fontforge&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Take note of the installation process. Because sometimes it fails due to a server response error. If that happens, just try again. Mine took 5 attempts.&lt;/p&gt;
+
+&lt;h2 id='create-icons'&gt;Create your Icons&lt;/h2&gt;
+
+&lt;p&gt;Now go ahead and create your icons in either Illustrator or Inkscape. They need to be flat and not have any transparencies and gradients. Once you&amp;#8217;re done, make sure each icon is a single path object because we&amp;#8217;re going to make that as a font. Save your document as SVG (&lt;code&gt;font-icons.svg&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h2 id='font-mapping'&gt;Creating the font library in Inkscape&lt;/h2&gt;
+
+&lt;p&gt;Open up Illustrator and create a 1000px by 1000px blank document. Then choose &lt;code&gt;File -&amp;gt; Import&lt;/code&gt; or &lt;code&gt;ctrl+i&lt;/code&gt; and choose the &lt;code&gt;font-icons.svg&lt;/code&gt; file we saved earlier.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open up &lt;code&gt;Text -&amp;gt; SVG Font Editor&lt;/code&gt;.&lt;/li&gt;
+
+&lt;li&gt;On the SVG Font Editor panel, Click &lt;code&gt;new&lt;/code&gt; then set the family name to &lt;code&gt;CoolFonts&lt;/code&gt; (click the Font 1 name on the left side first)&lt;/li&gt;
+
+&lt;li&gt;Click on the &lt;code&gt;Glyphs&lt;/code&gt; tab then click &lt;code&gt;Add Glyph&lt;/code&gt;.&lt;/li&gt;
+
+&lt;li&gt;Let&amp;#8217;s name this one as &lt;code&gt;cool&lt;/code&gt; and map this to &lt;code&gt;q&lt;/code&gt;.&lt;/li&gt;
+
+&lt;li&gt;Select one of your icons in the document, scale to full then align it center bottom.&lt;/li&gt;
+
+&lt;li&gt;Then on the SVG font editor, click &lt;code&gt;Get curves from selection...&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;Change the preview text value to &lt;code&gt;q&lt;/code&gt; to see if successful.&lt;/li&gt;
+
+&lt;li&gt;If your icon appeared on the preview, then you&amp;#8217;re good to go. Go and save it as &lt;code&gt;coolfonts.svg&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Now let&amp;#8217;s proceed and add this new SVG file to our HTML and CSS File.&lt;/p&gt;
+
+&lt;h2 id='css-html-generation'&gt;CSS and HTML integration&lt;/h2&gt;
+
+&lt;p&gt;In this section, I&amp;#8217;ll be using Chrome for debugging since it can use SVG as its font source. You should place your &lt;code&gt;font-icon.svg&lt;/code&gt; inside a &lt;code&gt;/fonts/&lt;/code&gt; folder in your project directory.&lt;/p&gt;
+
+&lt;h3 id='css'&gt;CSS&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;@font-face {
+  font-family: &amp;quot;CoolFonts&amp;quot;;
+  src: url(fonts/coolfonts.svg) format(&amp;#39;svg&amp;#39;); 
+}
+
+a.icon {
+  font-family: &amp;#39;CoolFonts&amp;#39;;
+}
+
+a.cool.icon:after {
+  content: &amp;#39;q&amp;#39;;
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id='html'&gt;HTML&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a class=&amp;quot;cool icon&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If that worked for you then great job! You make the universe proud.&lt;/p&gt;
+
+&lt;p&gt;You&amp;#8217;ll now be using SVG fonts for debugging. Open up your &lt;code&gt;/fonts/coolfonts.svg&lt;/code&gt; in Inkscape and do some changes, and it&amp;#8217;ll reflect on your page when you refresh. Good deal. Now let&amp;#8217;s move on to converting them to font files.&lt;/p&gt;
+
+&lt;h2 id='converting-in-fontforge'&gt;Converting SVG files in FontForge&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href='http://caniuse.com/#search=ttf'&gt;TTF support&lt;/a&gt; is available to most browsers. So let&amp;#8217;s use this format for now. Open up your terminal again and change directory to your project.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd my_project/fonts/&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, we&amp;#8217;ll create a &lt;a href='http://en.wikipedia.org/wiki/PerlScript'&gt;PerlScript&lt;/a&gt; to run FontForge&amp;#8217;s CLI. Create a &lt;code&gt;convert.pe&lt;/code&gt; file with your favorite text editor and type this in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/usr/local/bin/fontforge
+Open($1)
+Generate($1:r + &amp;quot;.ttf&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This script basically runs FontForge and performs the Open and Generate command with &lt;code&gt;$1&lt;/code&gt; being the filename you&amp;#8217;ll be specifying later. Go ahead and save it then switch back to your terminal and type in:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ fontforge -script convert.pe fonts/coolfonts.svg&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If all things turn good, you&amp;#8217;ll be able to see the generated &lt;code&gt;coolfonts.ttf&lt;/code&gt; file. Go back and edit the css file we had earlier and update it with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@font-face {
+  font-family: &amp;quot;CoolFonts&amp;quot;;
+  src:
+    url(fonts/coolfonts.svg) format(&amp;#39;svg&amp;#39;),
+    url(fonts/coolfonts.ttf) format(&amp;#39;ttf&amp;#39;);
+}
+
+a.icon {
+  font-family: &amp;#39;CoolFonts&amp;#39;;
+}
+
+a.cool.icon:after {
+  content: &amp;#39;q&amp;#39;;
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To see if this worked, try viewing your page in either Opera or Firefox (both of which doesn&amp;#8217;t support SVG as fonts). If all is good, then you&amp;#8217;ll see your icon there instead of the &amp;#8216;q&amp;#8217; character.&lt;/p&gt;
+
+&lt;p&gt;So, whenever you need to update or add icons to your coolfonts.svg file:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open up your &lt;code&gt;coolfonts.svg&lt;/code&gt; file in InkScape.&lt;/li&gt;
+
+&lt;li&gt;Perform necessary edits. Use Chrome to preview updates done in SVG.&lt;/li&gt;
+
+&lt;li&gt;Run the fontforge command once you&amp;#8217;re done with the changes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To make things easier, let&amp;#8217;s create a &lt;code&gt;makefile&lt;/code&gt; and put the fontforge script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;all:
+  fontforge -script convert.pe fonts/coolfonts.svg&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now whenever we need to publish the SVG files to TTF, all we have to do is type &lt;code&gt;make&lt;/code&gt; in the terminal and it&amp;#8217;ll perform the fontforge script we made earlier.&lt;/p&gt;
+
+&lt;h2 id='final-thougths'&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;Well that certainly wasn&amp;#8217;t a walk in the park, especially if you didn&amp;#8217;t have command line experience before this. But if ever you reached all this way, congrats for levelling up your technical experience and for not giving up. Now be proud of yourself. Go out and have beer or something.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Laugh and the world laughs with you, snore and you sleep alone.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;You can see an example of this technique in &lt;a href='https://github.com/FortAwesome/Font-Awesome'&gt;FontAwesome&lt;/a&gt;&amp;#8217;s &lt;a href='http://fortawesome.github.com/Font-Awesome/'&gt;demo page&lt;/a&gt;.&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
+&lt;p&gt;Similar to how we &lt;a href='http://www.w3schools.com/css/css_image_sprites.asp'&gt;sprite&lt;/a&gt; our PNG icons.&lt;/p&gt;
+&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:3'&gt;
+&lt;p&gt;Installing this requires X11 in your machine if you&amp;#8217;re on a Mac OS.&lt;/p&gt;
+&lt;a href='#fnref:3' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>The Golden Rectangle</title>
+    <link rel="alternate" href="/2012/07/14/golden-rectangle-in-web-design.html"/>
+    <id>/2012/07/14/golden-rectangle-in-web-design.html</id>
+    <published>2012-07-14T01:20:00+08:00</published>
+    <updated>2012-07-14T01:20:00+08:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <summary type="html">&lt;p&gt;I recall an episode in my life as a web designer where I&amp;#8217;d continuously struggle (and most of the time fail) in doing layouts. I couldn&amp;#8217;t think of a way to place all the pieces together without making it fall apart. This all changed when I started learning the foundation for design (and aesthetics).&lt;/p&gt;
+
+&lt;p&gt;</summary>
+    <content type="html">&lt;p&gt;I recall an episode in my life as a web designer where I&amp;#8217;d continuously struggle (and most of the time fail) in doing layouts. I couldn&amp;#8217;t think of a way to place all the pieces together without making it fall apart. This all changed when I started learning the foundation for design (and aesthetics).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#8217;ve been doing a lot of digging into CSS frameworks like &lt;a href='http://zurb.foundation.org'&gt;Foundation&lt;/a&gt;, &lt;a href='http://blueprintcss.org/'&gt;Blueprint&lt;/a&gt; and &lt;a href='http://compass-style.org'&gt;Compass&lt;/a&gt;, you&amp;#8217;ll noticed that they all have their own typography, color sets, and grid systems.&lt;/p&gt;
+
+&lt;h2 id='design_involves_mathematics'&gt;Design involves Mathematics&lt;/h2&gt;
+
+&lt;p&gt;I used to think that being able to apply proportion and rhythm in design is measured by one&amp;#8217;s innate ability. However true for some people&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;, it turns out that you can be scientific/mathematical in this approach to attain a visually pleasing result&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s take a look at the &lt;a href='http://en.wikipedia.org/wiki/Golden_ratio'&gt;Golden Ratio&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id='the_golden_ratio'&gt;The Golden Ratio&lt;/h2&gt;
+
+&lt;p&gt;It basically consists of two numerical values. One which is wider than the other but in a way that is proportionate to its sum with its smaller other. We can describe this simply in a math equation:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(a + b) / a = a + b&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In web design, you can get the next proportionate neighbor by either multiplying or dividing its width value by 1.61803399. So for example, if you have 960px container, an ideal container for your content would be 593px since:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;container = 960
+content = container / 1.61803399
+content = 593.31...&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and for the sidebar the value would be 366px since:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;content = 593
+sidebar = content / 1.61803399
+sidebar = 366.49....&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We still end up with the original container width if add it up:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sidebar + content = container
+593.31 + 366.49 = 959.8&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Whipping out a calculator everytime you&amp;#8217;re prototyping a layout sounds tiresome, boring and certainly not fun. So what I did was to create a guide in Adobe Illustrator:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Golden Grid Mock-up' src='https://dl.dropbox.com/u/2281027/blog/g-ratio-thumb.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;If we take a look at the grid, You&amp;#8217;ll see that it&amp;#8217;s a series of squares repeating over in a spiral direction. In Mathematics, this is popularly known as the &lt;a href='http://en.wikipedia.org/wiki/Fibonacci_number'&gt;Fibonacci Sequence&lt;/a&gt;. This creates a predictable &lt;a href='http://en.wikipedia.org/wiki/Patterns_in_nature'&gt;pattern that the natural world is fond of&lt;/a&gt;. which explains, I think, the reason why humans are psychologically attracted to things that are proportionate.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Golden Grid Highlighted' src='https://dl.dropbox.com/u/2281027/blog/g-ratio-highlighted-thumb.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;From here, I&amp;#8217;m able to quickly visualize and mock-up the placement of the elements. Here&amp;#8217;s a fast comp I came up with for this example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Golden Grid Mock-up' src='https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;I think it looks decent enough. Let&amp;#8217;s see what it looks like without the guide:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='Golden Grid Mock-up No-Grid' src='https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample-clean.jpg' /&gt;&lt;/p&gt;
+
+&lt;p&gt;Not necesarrily an award winning layout but it works.&lt;/p&gt;
+
+&lt;p&gt;So how do we apply this concept in front-end development? &lt;a href='http://en.wikipedia.org/wiki/Grid_(page_layout'&gt;Grids&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id='grid'&gt;Grid&lt;/h2&gt;
+
+&lt;p&gt;A grid system is extremely helpful in rapid design to html/css prototyping. By specifying the &lt;strong&gt;total columns&lt;/strong&gt;, the &lt;strong&gt;column width&lt;/strong&gt;, and the &lt;strong&gt;gutter width&lt;/strong&gt;, it makes it easier for the front-end developer to scaffold everything in place. This is also a design requirement in &lt;a href='http://en.wikipedia.org/wiki/Responsive_Web_Design'&gt;Responsive Web Design&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We can compare website design (and development) to something like designing and building a house. If you start with the right foundation, your house tends to last longer. Not to mention that it generates confidence and security to the people living in it.&lt;/p&gt;
+
+&lt;h2 id='where_to_start'&gt;Where to start&lt;/h2&gt;
+
+&lt;p&gt;I can only discuss this much. I highly recommend trying out &lt;a href='http://blueprintcss.org'&gt;Blueprint&lt;/a&gt; which has a low learning curve and something that I&amp;#8217;ve personally used in the past. A friend of mine suggested that the &lt;a href='http://zurb.foundation.org'&gt;Foundation&lt;/a&gt; framework&amp;#8217;s good too.&lt;/p&gt;
+
+&lt;p&gt;I currently use &lt;a href='http://compass-style.org'&gt;Compass&lt;/a&gt; and &lt;a href='http://susy.oddbird.net/'&gt;Susy&lt;/a&gt; as my SASS/CSS framework.&lt;/p&gt;
+
+&lt;h2 id='final_thoughts'&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;Using grids can sometimes feel restricting. Especially if you&amp;#8217;re trying to be different with standard layouts. But it helps a lot with getting things done and has proven useful by generations. In the end, I stick with it. Not because I don&amp;#8217;t wanna try something new, but because I wanna get things done.&lt;/p&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;Designers who can &amp;#8216;guestimate&amp;#8217; a layout that still looks aesthetically proportionate.&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
+&lt;p&gt;Creativity still plays a vital role in most things.&lt;/p&gt;
+&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>Hello, Universe.</title>
+    <link rel="alternate" href="/2012/07/11/welcome-to-my-blog.html"/>
+    <id>/2012/07/11/welcome-to-my-blog.html</id>
+    <published>2012-07-11T15:17:00+08:00</published>
+    <updated>2012-07-11T15:17:00+08:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <summary type="html">&lt;p&gt;Woot! I&amp;#8217;ve finally decided to create a blog so I could document my adventures in web design and development, as well as other things that are going on in my gray matter. If you like, you can follow my updates on &lt;a href='http://twitter.com/jamesflorentino'&gt;twitter&lt;/a&gt;.&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Woot! I&amp;#8217;ve finally decided to create a blog so I could document my adventures in web design and development, as well as other things that are going on in my gray matter. If you like, you can follow my updates on &lt;a href='http://twitter.com/jamesflorentino'&gt;twitter&lt;/a&gt;.&lt;/p&gt;</content>
+  </entry>
+</feed>
