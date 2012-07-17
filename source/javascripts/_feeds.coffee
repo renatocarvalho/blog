@@ -10,7 +10,7 @@ paths =
 data = {}
 
 $.get paths.dribbble, (data) ->
-  result = JSON.parse data
+  result = data
   result = result.shots
   random_shot = result[Math.round Math.random() * (result.length - 1)]
   container = $ '.dribbble-shot'
@@ -25,7 +25,7 @@ $.get paths.dribbble, (data) ->
 
 
 $.get paths.twitter, (data) ->
-  result = JSON.parse data
+  result = data
   result = result.splice 0, 5
   chunks = ""
   for item in result
