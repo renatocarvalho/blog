@@ -11,6 +11,7 @@ data = {}
 
 $.get paths.dribbble, (data) ->
   result = data
+  result = JSON.parse result if typeof data is "string"
   result = result.shots
   random_shot = result[Math.round Math.random() * (result.length - 1)]
   container = $ '.dribbble-shot'
@@ -26,6 +27,7 @@ $.get paths.dribbble, (data) ->
 
 $.get paths.twitter, (data) ->
   result = data
+  result = JSON.parse result if typeof data is "string"
   result = result.splice 0, 5
   chunks = ""
   for item in result
