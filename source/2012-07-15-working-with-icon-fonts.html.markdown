@@ -103,7 +103,7 @@ Next, we'll write our CSS and HTML code.
 
     <a class="cool icon"></a>
 
-> Note: Using SVG in the `@font-face` rule will only in Chrome.
+> Note: Using SVG in the `@font-face` rule will only work in Chrome.
 
 
 My workflow now is: I'll change something in the SVG file and refresh my page to see the changes. If I still need to do something, I hop back to Inkscape, make the necessarry changes, switch back to Chrome and refresh the page.
