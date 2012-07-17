@@ -15,7 +15,7 @@ SVG looks nice, but I need to be able to minimize http requests [^foot] and avoi
 
 READMORE
 
-> Disclaimer: Most of what I'm writing here are lessons taught by experience. If there's a more efficient way, you can [tweet](http://twitter.com/jamesflorentino) me about it and i'll update this article and gladly credit you. We're also going to use the command a lot.
+> Disclaimer: Most of what I'm writing here are lessons taught by experience. If there's a more efficient way, you can [tweet](http://twitter.com/jamesflorentino) me about it and i'll update this article and gladly credit you.
 
 Table of Contents
 -----------------
