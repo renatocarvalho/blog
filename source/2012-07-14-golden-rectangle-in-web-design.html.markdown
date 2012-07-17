@@ -13,7 +13,7 @@ If you've been doing a lot of digging into CSS frameworks like [Foundation](http
 Design and Mathematics
 ----------------------
 
-I used to think that being able to apply proportion and rhythm in design is based  by one's innate ability (and/or experience). However true for some people[^1], it turns out that you can be scientific/mathematical in this approach and still attain a visually pleasing result[^gr].
+I used to think that being able to apply proportion and rhythm in design is based on one's innate ability (and/or experience). However true for some people[^1], it turns out that you can be scientific/mathematical towards this problem and still attain a visually pleasing result[^gr].
 
 [^gr]: While creativity still plays a vital role in most things, technical knowledge is essential too.
 
@@ -22,11 +22,12 @@ Let's take a look at the [Golden Ratio](http://en.wikipedia.org/wiki/Golden_rati
 The Golden Ratio
 ----------------
 
-It basically consists of two numerical values. One which is wider than the other but in a way that is proportionate to its sum with its smaller other. We can describe this simply in a math equation:
+It basically consists of two numerical values. One which is wider than the other but in a way that is proportionate to its sum with its smaller other. We can describe this simply in an equation.
 
     (a + b) / a = a + b
 
-In web design, you can get the next proportionate neighbor by either multiplying or dividing its width value by 1.61803399. So for example, if you have 960px container, an ideal container for your content would be 593px since:
+
+In web design, you can get the next proportionate element by either multiplying or dividing its width value by 1.61803399. So for example, if you have 960px container, an ideal container for your content would be 593px since:
 
     container = 960
     content = container / 1.61803399
