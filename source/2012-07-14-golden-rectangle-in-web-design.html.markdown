@@ -1,23 +1,32 @@
 ---
 title: The Golden Rectangle
 date: 2012-07-14 01:20 +08:00
+thumb: https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample-thumb.jpg
 tags: design, css
 ---
-There was a time in my life as a web designer where I'd have a really difficult time doing layouts because I couldn't think of a way to place all the required elements together without making it look like it's going to fall apart any second. Thankfully, I finally found a solution to my problem. READMORE
+I recall an episode in my life as a web designer where I'd continuously struggle (and most of the time fail) in doing layouts for the web because I couldn't think of a way to place all the pieces together without making it fall apart. This all changed when I started learning the foundation for design (and aesthetics).
+
+READMORE
 
 If you've been doing a lot of digging into CSS frameworks like [Foundation](http://zurb.foundation.org), [Blueprint](http://blueprintcss.org/) and [Compass](http://compass-style.org), you'll noticed that they all have their own typography, color sets, and grid systems.
 
-## Design with Mathematics
+Design involves Mathematics
+---------------------------
 
-I used to think that being able to apply proportion and rhythm in design is merely based on personal judgment and one's innate ability. However true for some people[^1], it turns out that you can be scientific/mathematical in this approach to attain a visually pleasing result. Let's take a look at the [Golden Ratio](http://en.wikipedia.org/wiki/Golden_ratio).
+I used to think that being able to apply proportion and rhythm in design is measured by one's innate ability. However true for some people[^1], it turns out that you can be scientific/mathematical in this approach to attain a visually pleasing result[^gr].
 
-## The Golden Ratio
+[^gr]: Creativity still plays a vital role in most things.
 
-The golden ratio basically consists of two numerical values. One which is wider than the other but in a way that is proportionate to its sum with its smaller other. We can describe this simply in a math equation:
+Let's take a look at the [Golden Ratio](http://en.wikipedia.org/wiki/Golden_ratio).
+
+The Golden Ratio
+----------------
+
+It basically consists of two numerical values. One which is wider than the other but in a way that is proportionate to its sum with its smaller other. We can describe this simply in a math equation:
 
     (a + b) / a = a + b
 
-In graphic design layouts, you can get the next proportionate neighbor by either multiplying or dividing its width value by 1.61803399. So for example, if you have 960px container, an ideal container for your content would be 593px since:
+In web design, you can get the next proportionate neighbor by either multiplying or dividing its width value by 1.61803399. So for example, if you have 960px container, an ideal container for your content would be 593px since:
 
     container = 960
     content = container / 1.61803399
@@ -34,47 +43,44 @@ We still end up with the original container width if add it up:
     sidebar + content = container
     593.31 + 366.49 = 959.8
 
-But let's face it, whipping out a calculator everytime you're prototyping a layout sounds tiresome, boring and most of all, not fun. So I decided to fire up illustrator and made this as a guide:
+Whipping out a calculator everytime you're prototyping a layout sounds tiresome, boring and certainly not fun. So what I did was to create a guide in Adobe Illustrator:
 
-[![Golden Grid Mock-up][2]][1]
-  [1]: https://dl.dropbox.com/u/2281027/blog/golden-grid-layout.psd
-  [2]: https://dl.dropbox.com/u/2281027/blog/g-ratio-thumb.png (hover text)
+![Golden Grid Mock-up](https://dl.dropbox.com/u/2281027/blog/g-ratio-thumb.png)
 
-> Download [golden-grid-layout.psd](https://dl.dropbox.com/u/2281027/blog/golden-grid-layout.psd)
+If we take a look at the grid, You'll see that it's a series of squares repeating over in a spiral direction. In Mathematics, this is popularly known as the [Fibonacci Sequence](http://en.wikipedia.org/wiki/Fibonacci_number). This creates a predictable [pattern that the natural world is fond of](http://en.wikipedia.org/wiki/Patterns_in_nature). which explains, I think, the reason why humans are psychologically attracted to things that are proportionate.
 
-If we take a look at the grid, You'll see that it's a series of squares repeating over in a spiral direction. This means that we're still maintaining a sense of proportion each time we sub-divide the elements.
+![Golden Grid Highlighted](https://dl.dropbox.com/u/2281027/blog/g-ratio-highlighted-thumb.jpg)
 
-![Golden Grid Highlighted](https://dl.dropbox.com/u/2281027/blog/g-ratio-highlighted-thumb.png)
+From here, I'm able to quickly visualize and mock-up the placement of the elements. Here's a fast comp I came up with for this example:
 
-From here I can start estimating the placement of elements pretty quickly.
+![Golden Grid Mock-up](https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample.jpg)
 
-![Golden Grid Mock-up](https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample.png)
+I think it looks decent enough. Let's see what it looks like without the guide:
 
-With this design practice, I'll know exactly how and where to put my UI elements in the page instead of guessing precariously. The golden ratio is evident in all things including the natural world. Limbs, flowers, animals, plants and celestial bodies. Saturn's rings for example has proportionate distance between the rings and the planet.
+![Golden Grid Mock-up No-Grid](https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample-clean.jpg)
 
-So how do we apply this with front-end development? Let's take a look at [grids](http://en.wikipedia.org/wiki/Grid_(page_layout).
+Looks proportionate to me. The golden rectangle guide I made earlier enabled me to quickly estimate the placement of my UI elements without endlessly guessing if it "looks right".
 
-## Grid System
+So how do we apply this concept in front-end development? [Grids](http://en.wikipedia.org/wiki/Grid_(page_layout).
 
-There are three main variables in a grid layout.
+Grid
+----
 
-### Grid Columns
-> The number of grids in your layout. The most common is 24 which results to a width of 960px.
+A grid system is extremely helpful in rapid design to html/css prototyping. By specifying the __total columns__, the __column width__, and the __gutter width__, it makes it easier for the front-end developer to scaffold everything in place. This is also a design requirement in [Responsive Web Design](http://en.wikipedia.org/wiki/Responsive_Web_Design).
 
-### Grid Width
-> The width of each grid. Default value is `30px`
+To me, website design (and development) is like building a house. If you start with the right foundation, your house tends to last longer. Not to mention that it generates confidence and security to the people living in it.
 
-### Grid Margin
-> The amount of space between grids. Default value is `10px`
+Where to start
+--------------
 
-Grid systems will help get front-end development jobs faster. Pack that along with vertical rhythms in typography, you can quickly prototype a decent-looking wireframe in html/css in just an hour or so.
+I can only discuss so much regarding this topic. But if you'd want to start trying out grids for practice and educational purposes, you can try out [Blueprint](http://blueprintcss.org) which has a very low learning curve that I've personally used in the past. A friend of mine suggested the [Foundation](http://zurb.foundation.org) framework's good too.
 
-I won't go deeper into discussing how to use grids in your project but I highly suggest checking out the [Foundation framework](http://zurb.foundation.org) and [Blueprint](http://blueprintcss.org) for epic learning.
+I currently use [Compass](http://compass-style.org) and [Susy](http://susy.oddbird.net/) as my css framework.
 
-## Final Thoughts
+Final Thoughts
+--------------
 
-Although grids can sometimes be constricting because of the rules you have to follow, in the end, it saves you time. Not to mention that it easily bridges the gap between designers and developers working on the same project. This is analogous to the same reason why you should use jQuery as your JavaScript library when doing code. People in the past have already solved these problems by providing these frameworks for us to use.
+Using grids can sometimes be restrictive. Especially if you're trying to be different with standard layouts. But it helps a lot with getting things done and has proven useful by generations of print and industrial designers. In the end, I stuck with it. Not because I don't wanna try something new, but I wanna get things done. 
 
-We stand on the shoulders of giants.
 
 [^1]: Designers who can 'guestimate' a layout that still looks aesthetically proportionate.

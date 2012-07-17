@@ -1,14 +1,22 @@
 ---
 title: Working with Icon Fonts
 date: 2012-07-15 17:59 +08:00
-thumb: james.png
 tags: css, workflow, code
 ---
-We're entering into an age in computers where high definition displays are becoming mainstream. While not really an immediate concern for website owners since it's fairly new, some designers are adapting early such as myself. In this article, I'll be showing you how I managed to setup my workflow in testing, building and deploying icon fonts. This guide requires some intermediate knowledge in computers. READMORE
+Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp on these devices.
 
-> Note: This guide requires getting our hands dirty in the terminal.
+Some suggested creating two sets of images, while others use the `<svg>` tag. In my case, I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs [^1] and then use them as fonts in the `@font-family` css rule.
 
-> Disclaimer: Most of what I'm writing here are lessons taught by experience. If there's a more efficient way, you can [tweet](http://twitter.com/jamesflorentino) me about it and i'll update this article and gladly credit you. 
+[^1]: You can see an example of this technique in [FontAwesome](https://github.com/FortAwesome/Font-Awesome)'s [demo page](http://fortawesome.github.com/Font-Awesome/).
+
+The reason why I didn't go with the SVG route is because I needed to be able to minimize http requests [^foot] and also not clutter my HTML templating with a bunch of `<svg>` tags. Upon learning how you could map your icons to your 
+
+[^foot]: Similar to how we [sprite](http://www.w3schools.com/css/css_image_sprites.asp) our PNG icons.
+
+
+READMORE
+
+> Disclaimer: Most of what I'm writing here are lessons taught by experience. If there's a more efficient way, you can [tweet](http://twitter.com/jamesflorentino) me about it and i'll update this article and gladly credit you. We're also going to use the command line a bit.
 
 Table of Contents
 -----------------
@@ -29,7 +37,9 @@ Required Applications {#required}
 Installation {#installation}
 ----------------------------
 
-We'll be using Inkscape to create our font library. Inkscape to define our [glyphs](http://en.wikipedia.org/wiki/Glyph). Installing this is pretty straightforward so go ahead and download it. Make sure your system has X11 by the way.
+We'll be using Inkscape to create our font library. Inkscape to define our [glyphs](http://en.wikipedia.org/wiki/Glyph). Installing this is pretty straightforward so go ahead and download it [^note].
+
+[^note]: Installing this requires X11 in your machine if you're on a Mac OS.
 
 Fontforge is going to be responsible for converting our SVG file to different formats (ttf, otf, woff, etc.). 
 
@@ -149,3 +159,5 @@ Final Thoughts {#final-thougths}
 --------------------------------
 
 Well that certainly wasn't a walk in the park, especially if you didn't have command line experience before this. But if ever you reached all this way, congrats for levelling up your technical experience and for not giving up. Now be proud of yourself. Go out and have beer or something.
+
+> Laugh and the world laughs with you, snore and you sleep alone.

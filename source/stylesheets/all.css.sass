@@ -3,9 +3,12 @@
 @import base
 @import mixins
 @import layout
-@import blueprint/typography
 
-+blueprint-typography()
+
+// ========================================
+// Custom Fonts
+// ========================================
++font-face("JamesIcons", font-files("/images/jamesicon.ttf", "/images/jamesicon.svg"))
 
 // ========================================
 // Visual Mixins
@@ -14,14 +17,19 @@
 =border-bottom-ruler
   border-bottom: 1px solid rgba($border-color, 0.25)
 
+
 // ========================================
 // Classes
 // ========================================
 ._gradient-background
   $direction: 50% 0%
-  $top: rgba(black, 0.25)
+  $top: rgba(black, 0.35)
   $bottom: rgba(black, 0)
   +background-image(linear-gradient($direction, $top, $bottom))
+
+
+._text-glow
+  +text-shadow(0 0 15px $border-color)
 
 // ========================================
 // font-size, colors, css3 stuff can be
@@ -52,17 +60,17 @@ h2
 h3
   font-size: 1.25em
   text-transform: uppercase
-  line-height: +span(1.25)
   +border-bottom-ruler()
 
 h4
   font-size: 1em
-  line-height: +span(1)
   text-transform: uppercase
   +border-bottom-ruler()
 
 h6
-  font-weight: 500
+  font-size: 0.9em
+  font-weight: 300
+  text-transform: uppercase
 
 p
   color: darken($font-color, 0.1)
@@ -76,21 +84,47 @@ code
   background: rgba(black, 0.5)
   border: 1px solid rgba($border-color, 0.25)
 
-
 blockquote
   border-left: 3px solid rgba($border-color, 0.25)
 
+sup
+  font-weight: 600
+  padding: 1px
+
+hr
+  border-color: rgba($border-color, 0.5)
+  margin-top: +span(1)
+  margin-bottom: +span(1)
+
 h1, h2, h3, h4, h5, h6
-  +text-shadow(0 0 15px $border-color)
+  @extend ._text-glow
   color: $title-color
   a
     text-decoration: none
     color: inherit
+    border: none
     &:visited,
     &:active
       color: inherit
 
-.enter
+
+// ====================================================
+// font icons
+// ====================================================
+.icon
+  font-family: JamesIcons
+  &.twitter:after
+    content: 't'
+
+  &.dribbble:after
+    content: 'd'
+
+  &.github:after
+    content: 'g'
+
+  &.stackoverflow:after
+    content: 's'
+
 
 // ====================================================
 // banner
@@ -107,28 +141,54 @@ h1, h2, h3, h4, h5, h6
     
 
 #footer
-  font-size: 0.8em
+  font-size: 0.9em
+  text-align: center
 
 #main,
 #sidebar
   @extend ._gradient-background
-  border-top: 3px solid rgba($border-color, 0.5)
+  border-top: 5px solid rgba($border-color, 0.5)
 
 #menu
-  ul
-    +reset()
   li
-    +reset()
-    display: inline-block
-    margin-right: 10px
     text-transform: uppercase
   a
+    font-weight: 600
     text-decoration: none
+    border: 0
+    color: $title-color
+    +text-shadow(0 1px 2px black)
+    &:hover
+      @extend ._text-glow
+      color: $title-color
 
 .tags
-  ul
-    display: block
+  font-weight: 500
+
+time
+  color: $border-color
+  font-weight: 500
+  text-align: right
+
+#sidebar
   li
-    display: inline-block
-  a
-    color: $title-color
+    border-left: 3px solid rgba($border-color, 0.25)
+    &:hover
+      border-left-color: $title-color
+  ul.icons li
+    font-size: 1.5em
+    border: 0
+    a
+      color: inherit
+      border: none
+      font-weight: 100
+      &:hover
+        color: white
+        @extend ._text-glow
+
+.recent-articles
+  article
+    border-top: 5px solid rgba($border-color, 0.25)
+  time, .tags
+    font-size: 0.9em
+    font-weight: 500

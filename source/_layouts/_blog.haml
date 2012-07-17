@@ -15,17 +15,14 @@
         %article
           %h1= current_page.title
 
-          / tags and related links
           .tags
             %h6 Published under:
             %ul
               - current_page.tags.each do |tag|
                 %li= link_to tag, tag_path(tag)
 
-          / time of posting
           %time= current_page.date.strftime('%B %e, %Y')
   
-          / comments
           .post= yield
           %h2 Comments and Reactions
           #disqus_thread 
