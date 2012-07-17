@@ -148,13 +148,17 @@ a.cool.icon:after {
 
 <pre><code>&lt;a class=&quot;cool icon&quot;&gt;&lt;/a&gt;</code></pre>
 
-<p>SVG only works in Chrome, that&#8217;s why it&#8217;s my browser of choice for web development. So my workflow is, I&#8217;ll change something in the SVG file and refresh my page to see the changes. If it still needs adjusting, then I can hop back to Inkscape, make the necessarry changes, switch back to Chrome and refresh to see the changes.</p>
+<blockquote>
+<p>Note: Using SVG in the <code>@font-face</code> rule will only in Chrome.</p>
+</blockquote>
 
-<p>Once you think it&#8217;s good to go, we can convert our SVG to a font file.</p>
+<p>My workflow now is: I&#8217;ll change something in the SVG file and refresh my page to see the changes. If I still need to do something, I hop back to Inkscape, make the necessarry changes, switch back to Chrome and refresh the page.</p>
+
+<p>Once I&#8217;m happy with the result, i&#8217;ll then convert the SVG file into a font file.</p>
 
 <h2 id='converting-in-fontforge'>Converting SVG files in FontForge</h2>
 
-<p><a href='http://caniuse.com/#search=ttf'>TTF support</a> is available to most browsers. So let&#8217;s use this format for now. Open up your terminal again and change directory to your project.</p>
+<p><a href='http://caniuse.com/#search=ttf'>TTF support</a> is available on most browsers. So let&#8217;s use this for now. Open up your terminal again and change directory to your project.</p>
 
 <pre><code>$ cd my_project/fonts/</code></pre>
 
