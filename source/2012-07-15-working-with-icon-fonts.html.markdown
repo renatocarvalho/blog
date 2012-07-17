@@ -1,7 +1,7 @@
 ---
 title: Working with Icon Fonts
 date: 2012-07-15 17:59 +08:00
-thumb: https://dl.dropbox.com/u/2281027/blog/icons-lib-preview.jpg
+thumb: http://i.imgur.com/PYDvI.jpg
 tags: css, workflow, code
 ---
 Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.

@@ -1,7 +1,7 @@
 ---
 title: The Golden Rectangle
 date: 2012-07-14 01:20 +08:00
-thumb: https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample-thumb.jpg
+thumb: http://i.imgur.com/Q9hhx.jpg
 tags: design, css
 ---
 I recall an episode in my life as a web designer where I'd continuously struggle (and most of the time fail) in doing layouts. I couldn't think of a way to place all the pieces together without making it fall apart. This all changed when I learned about grids.
@@ -45,19 +45,19 @@ We still end up with the original container width if add it up:
 
 Whipping out a calculator everytime you're prototyping a layout sounds tiresome, boring and certainly not fun. So what I did was to create a guide in Adobe Illustrator:
 
-![Golden Grid Mock-up](https://dl.dropbox.com/u/2281027/blog/g-ratio-thumb.png)
+![Golden Grid Mock-up](http://i.imgur.com/r5Y3I.png)
 
 If we take a look at the grid, You'll see that it's a series of squares repeating over in a spiral direction. In Mathematics, this is popularly known as the [Fibonacci Sequence](http://en.wikipedia.org/wiki/Fibonacci_number). This creates a predictable [pattern that the natural world is fond of](http://en.wikipedia.org/wiki/Patterns_in_nature). which explains, I think, the reason why humans are psychologically attracted to things that are proportionate.
 
-![Golden Grid Highlighted](https://dl.dropbox.com/u/2281027/blog/g-ratio-highlighted-thumb.jpg)
+![Golden Grid Highlighted](http://i.imgur.com/eq99j.jpg)
 
 From here, I'm able to quickly visualize and mock-up the placement of the elements. Here's a fast comp I came up with for this example:
 
-![Golden Grid Mock-up](https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample.jpg)
+![Golden Grid Mock-up](http://i.imgur.com/pPcZq.jpg)
 
 I think it looks decent enough. Let's see what it looks like without the guide:
 
-![Golden Grid Mock-up No-Grid](https://dl.dropbox.com/u/2281027/blog/g-ratio-mockup-sample-clean.jpg)
+![Golden Grid Mock-up No-Grid](http://i.imgur.com/v8Gg9.jpg)
 
 Not necesarrily an award winning layout but it works. 
 
