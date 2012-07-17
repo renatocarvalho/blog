@@ -1,21 +1,19 @@
 ---
 title: Working with Icon Fonts
 date: 2012-07-15 17:59 +08:00
-thumb: https://dl.dropbox.com/u/2281027/blog/font-icons-preview.jpg
+thumb: https://dl.dropbox.com/u/2281027/blog/icons-lib-preview.jpg
 tags: css, workflow, code
 ---
-Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp on these devices.
+Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.
 
-Some suggested creating two sets of images, while others use the `<svg>` tag. In my case, I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs [^1] and then use them as fonts in the `@font-family` css rule.
+Some suggested creating two sets of images, while others use the `<svg>` tag. I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs [^1] and then use them as fonts in the `@font-family` css rule.
 
-The reason why I didn't go with the SVG route is because I needed to be able to minimize http requests [^foot] and also not clutter my HTML templating with a bunch of `<svg>` tags.
+SVG looks nice, but I need to be able to minimize http requests [^foot] and avoid clutter my HTML templating with a bunch of `<svg>` tags. So far was I able to create my own workflow and that's our topic of this article.
 
 [^1]: You can see an example of this technique in [FontAwesome](https://github.com/FortAwesome/Font-Awesome)'s [demo page](http://fortawesome.github.com/Font-Awesome/).
 [^foot]: Similar to how we [sprite](http://www.w3schools.com/css/css_image_sprites.asp) our PNG icons.
 
 READMORE
-
-
 
 > Disclaimer: Most of what I'm writing here are lessons taught by experience. If there's a more efficient way, you can [tweet](http://twitter.com/jamesflorentino) me about it and i'll update this article and gladly credit you. We're also going to use the command a lot.
 
@@ -61,12 +59,12 @@ Take note of the installation process. Because sometimes it fails due to a serve
 Create your Icons {#create-icons}
 ---------------------------------
 
-Now go ahead and create your icons in either Illustrator or Inkscape. They need to be flat and not have any transparencies and gradients. Once you're done, make sure each icon is a single path object because we're going to make that as a font. Save your document as SVG (`font-icons.svg`).
+Now go ahead and create your icons in either Illustrator or Inkscape. They need to be flat and not have any transparencies and gradients. Once you're done, make sure each icon is a single path object because we're going to make that as a font. Save your document as SVG (`icons-lib.svg`).
 
 Creating the font library in Inkscape {#font-mapping}
 -----------------------------------------------------
 
-Open up Illustrator and create a 1000px by 1000px blank document. Then choose `File -> Import` or `ctrl+i` and choose the `font-icons.svg` file we saved earlier.
+Open up Illustrator and create a 1000px by 1000px blank document. Then choose `File -> Import` or `ctrl+i` and choose the `icons-lib.svg` file we saved earlier.
 
 1. Open up `Text -> SVG Font Editor`.
 2. On the SVG Font Editor panel, Click `new` then set the family name to `CoolFonts` (click the Font 1 name on the left side first)
@@ -82,7 +80,9 @@ Now let's proceed and add this new SVG file to our HTML and CSS File.
 CSS and HTML integration {#css-html-generation}
 -----------------------------------------------
 
-In this section, I'll be using Chrome for debugging since it can use SVG as its font source. You should place your `font-icon.svg` inside a `/fonts/` folder in your project directory.
+In this section, I'll be using Chrome for debugging since it can use SVG as its font source. You should place your `coolfonts.svg` inside a `/fonts/` folder in your project directory.
+
+Next, we'll write our CSS and HTML code.
 
 ### CSS
 
@@ -103,9 +103,9 @@ In this section, I'll be using Chrome for debugging since it can use SVG as its 
 
     <a class="cool icon"></a>
 
-If that worked for you then great job! You make the universe proud.
+SVG only works in Chrome, that's why it's my browser of choice for web development. So my workflow is, I'll change something in the SVG file and refresh my page to see the changes. If it still needs adjusting, then I can hop back to Inkscape, make the necessarry changes, switch back to Chrome and refresh to see the changes.
 
-You'll now be using SVG fonts for debugging. Open up your `/fonts/coolfonts.svg` in Inkscape and do some changes, and it'll reflect on your page when you refresh. Good deal. Now let's move on to converting them to font files.
+Once you think it's good to go, we can convert our SVG to a font file.
 
 Converting SVG files in FontForge {#converting-in-fontforge}
 ------------------------------------------------------------
@@ -147,7 +147,8 @@ So, whenever you need to update or add icons to your coolfonts.svg file:
 
 1. Open up your `coolfonts.svg` file in InkScape.
 2. Perform necessary edits. Use Chrome to preview updates done in SVG.
-3. Run the fontforge command once you're done with the changes.
+3. If all looks in place, run the FontForge script to generate the font file.
+4. Push to production/staging.
 
 To make things easier, let's create a `makefile` and put the fontforge script:
 

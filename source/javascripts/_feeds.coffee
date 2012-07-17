@@ -3,9 +3,9 @@ paths =
   twitter:  'http://floating-summer-9664.herokuapp.com/twitter'
 
 
-paths =
-  dribbble: 'http://localhost:5000/dribbble'
-  twitter:  'http://localhost:5000/twitter'
+# paths =
+#   dribbble: 'http://localhost:5000/dribbble'
+#   twitter:  'http://localhost:5000/twitter'
 
 data = {}
 
@@ -30,7 +30,7 @@ $.get paths.twitter, (data) ->
   chunks = ""
   for item in result
     tweet = "#{item.text.substr(0, 50)}..."
-    link = "http://twitter.com/jamesflorentino/statuses/#{item.id}"
+    link = "http://twitter.com/jamesflorentino/status/#{item.id_str}"
 
     chunks +=
       """
