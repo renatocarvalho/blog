@@ -8,7 +8,7 @@ I recall an episode in my life as a web designer where I'd continuously struggle
 
 READMORE
 
-If you've been doing a lot of digging into CSS frameworks like [Foundation](http://zurb.foundation.org), [Blueprint](http://blueprintcss.org/) and [Compass](http://compass-style.org), you'll noticed that they all have their own typography, color sets, and grid systems.
+If you've been doing a lot of digging into CSS frameworks like [Foundation](http://zurb.foundation.org), [Blueprint](http://blueprintcss.org/) and [Compass](http://compass-style.org), you'll notice that they all have their own typography, color sets, and grid systems.
 
 Design and Mathematics
 ----------------------
