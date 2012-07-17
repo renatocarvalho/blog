@@ -135,7 +135,7 @@ a.cool.icon:after {
 &lt;pre&gt;&lt;code&gt;&amp;lt;a class=&amp;quot;cool icon&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Note: Using SVG in the &lt;code&gt;@font-face&lt;/code&gt; rule will only in Chrome.&lt;/p&gt;
+&lt;p&gt;Note: Using SVG in the &lt;code&gt;@font-face&lt;/code&gt; rule will only work in Chrome.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;My workflow now is: I&amp;#8217;ll change something in the SVG file and refresh my page to see the changes. If I still need to do something, I hop back to Inkscape, make the necessarry changes, switch back to Chrome and refresh the page.&lt;/p&gt;
