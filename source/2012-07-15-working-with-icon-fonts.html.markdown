@@ -103,14 +103,17 @@ Next, we'll write our CSS and HTML code.
 
     <a class="cool icon"></a>
 
-SVG only works in Chrome, that's why it's my browser of choice for web development. So my workflow is, I'll change something in the SVG file and refresh my page to see the changes. If it still needs adjusting, then I can hop back to Inkscape, make the necessarry changes, switch back to Chrome and refresh to see the changes.
+> Note: Using SVG in the `@font-face` rule will only in Chrome.
 
-Once you think it's good to go, we can convert our SVG to a font file.
+
+My workflow now is: I'll change something in the SVG file and refresh my page to see the changes. If I still need to do something, I hop back to Inkscape, make the necessarry changes, switch back to Chrome and refresh the page.
+
+Once I'm happy with the result, i'll then convert the SVG file into a font file.
 
 Converting SVG files in FontForge {#converting-in-fontforge}
 ------------------------------------------------------------
 
-[TTF support](http://caniuse.com/#search=ttf) is available to most browsers. So let's use this format for now. Open up your terminal again and change directory to your project.
+[TTF support](http://caniuse.com/#search=ttf) is available on most browsers. So let's use this for now. Open up your terminal again and change directory to your project.
 
     $ cd my_project/fonts/
 
