@@ -18,18 +18,18 @@
     <author>
       <name>Article Author</name>
     </author>
-    <summary type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp on these devices.&lt;/p&gt;
+    <summary type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.&lt;/p&gt;
 
-&lt;p&gt;Some suggested creating two sets of images, while others use the &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tag. In my case, I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
+&lt;p&gt;Some suggested creating two sets of images, while others use the &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tag. I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
 
-&lt;p&gt;The reason why I didn&amp;#8217;t go with the SVG route is because I needed to be able to minimize http requests &lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; and also not clutter my HTML templating with a bunch of &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+&lt;p&gt;SVG looks nice, but I need to be able to minimize http requests &lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; and avoid clutter my HTML templating with a bunch of &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tags. So far was I able to create my own workflow and that&amp;#8217;s our topic of this article.&lt;/p&gt;
 
 &lt;p&gt;</summary>
-    <content type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp on these devices.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.&lt;/p&gt;
 
-&lt;p&gt;Some suggested creating two sets of images, while others use the &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tag. In my case, I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
+&lt;p&gt;Some suggested creating two sets of images, while others use the &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tag. I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
 
-&lt;p&gt;The reason why I didn&amp;#8217;t go with the SVG route is because I needed to be able to minimize http requests &lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; and also not clutter my HTML templating with a bunch of &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+&lt;p&gt;SVG looks nice, but I need to be able to minimize http requests &lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; and avoid clutter my HTML templating with a bunch of &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tags. So far was I able to create my own workflow and that&amp;#8217;s our topic of this article.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -83,11 +83,11 @@
 
 &lt;h2 id='create-icons'&gt;Create your Icons&lt;/h2&gt;
 
-&lt;p&gt;Now go ahead and create your icons in either Illustrator or Inkscape. They need to be flat and not have any transparencies and gradients. Once you&amp;#8217;re done, make sure each icon is a single path object because we&amp;#8217;re going to make that as a font. Save your document as SVG (&lt;code&gt;font-icons.svg&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Now go ahead and create your icons in either Illustrator or Inkscape. They need to be flat and not have any transparencies and gradients. Once you&amp;#8217;re done, make sure each icon is a single path object because we&amp;#8217;re going to make that as a font. Save your document as SVG (&lt;code&gt;icons-lib.svg&lt;/code&gt;).&lt;/p&gt;
 
 &lt;h2 id='font-mapping'&gt;Creating the font library in Inkscape&lt;/h2&gt;
 
-&lt;p&gt;Open up Illustrator and create a 1000px by 1000px blank document. Then choose &lt;code&gt;File -&amp;gt; Import&lt;/code&gt; or &lt;code&gt;ctrl+i&lt;/code&gt; and choose the &lt;code&gt;font-icons.svg&lt;/code&gt; file we saved earlier.&lt;/p&gt;
+&lt;p&gt;Open up Illustrator and create a 1000px by 1000px blank document. Then choose &lt;code&gt;File -&amp;gt; Import&lt;/code&gt; or &lt;code&gt;ctrl+i&lt;/code&gt; and choose the &lt;code&gt;icons-lib.svg&lt;/code&gt; file we saved earlier.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Open up &lt;code&gt;Text -&amp;gt; SVG Font Editor&lt;/code&gt;.&lt;/li&gt;
@@ -111,7 +111,9 @@
 
 &lt;h2 id='css-html-generation'&gt;CSS and HTML integration&lt;/h2&gt;
 
-&lt;p&gt;In this section, I&amp;#8217;ll be using Chrome for debugging since it can use SVG as its font source. You should place your &lt;code&gt;font-icon.svg&lt;/code&gt; inside a &lt;code&gt;/fonts/&lt;/code&gt; folder in your project directory.&lt;/p&gt;
+&lt;p&gt;In this section, I&amp;#8217;ll be using Chrome for debugging since it can use SVG as its font source. You should place your &lt;code&gt;coolfonts.svg&lt;/code&gt; inside a &lt;code&gt;/fonts/&lt;/code&gt; folder in your project directory.&lt;/p&gt;
+
+&lt;p&gt;Next, we&amp;#8217;ll write our CSS and HTML code.&lt;/p&gt;
 
 &lt;h3 id='css'&gt;CSS&lt;/h3&gt;
 
@@ -132,9 +134,9 @@ a.cool.icon:after {
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;a class=&amp;quot;cool icon&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;If that worked for you then great job! You make the universe proud.&lt;/p&gt;
+&lt;p&gt;SVG only works in Chrome, that&amp;#8217;s why it&amp;#8217;s my browser of choice for web development. So my workflow is, I&amp;#8217;ll change something in the SVG file and refresh my page to see the changes. If it still needs adjusting, then I can hop back to Inkscape, make the necessarry changes, switch back to Chrome and refresh to see the changes.&lt;/p&gt;
 
-&lt;p&gt;You&amp;#8217;ll now be using SVG fonts for debugging. Open up your &lt;code&gt;/fonts/coolfonts.svg&lt;/code&gt; in Inkscape and do some changes, and it&amp;#8217;ll reflect on your page when you refresh. Good deal. Now let&amp;#8217;s move on to converting them to font files.&lt;/p&gt;
+&lt;p&gt;Once you think it&amp;#8217;s good to go, we can convert our SVG to a font file.&lt;/p&gt;
 
 &lt;h2 id='converting-in-fontforge'&gt;Converting SVG files in FontForge&lt;/h2&gt;
 
@@ -178,7 +180,9 @@ a.cool.icon:after {
 
 &lt;li&gt;Perform necessary edits. Use Chrome to preview updates done in SVG.&lt;/li&gt;
 
-&lt;li&gt;Run the fontforge command once you&amp;#8217;re done with the changes.&lt;/li&gt;
+&lt;li&gt;If all looks in place, run the FontForge script to generate the font file.&lt;/li&gt;
+
+&lt;li&gt;Push to production/staging.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;To make things easier, let&amp;#8217;s create a &lt;code&gt;makefile&lt;/code&gt; and put the fontforge script:&lt;/p&gt;
@@ -212,18 +216,18 @@ a.cool.icon:after {
     <author>
       <name>Article Author</name>
     </author>
-    <summary type="html">&lt;p&gt;I recall an episode in my life as a web designer where I&amp;#8217;d continuously struggle (and most of the time fail) in doing layouts. I couldn&amp;#8217;t think of a way to place all the pieces together without making it fall apart. This all changed when I started learning the foundation for design (and aesthetics).&lt;/p&gt;
+    <summary type="html">&lt;p&gt;I recall an episode in my life as a web designer where I&amp;#8217;d continuously struggle (and most of the time fail) in doing layouts. I couldn&amp;#8217;t think of a way to place all the pieces together without making it fall apart. This all changed when I learned about grids.&lt;/p&gt;
 
 &lt;p&gt;</summary>
-    <content type="html">&lt;p&gt;I recall an episode in my life as a web designer where I&amp;#8217;d continuously struggle (and most of the time fail) in doing layouts. I couldn&amp;#8217;t think of a way to place all the pieces together without making it fall apart. This all changed when I started learning the foundation for design (and aesthetics).&lt;/p&gt;
+    <content type="html">&lt;p&gt;I recall an episode in my life as a web designer where I&amp;#8217;d continuously struggle (and most of the time fail) in doing layouts. I couldn&amp;#8217;t think of a way to place all the pieces together without making it fall apart. This all changed when I learned about grids.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;If you&amp;#8217;ve been doing a lot of digging into CSS frameworks like &lt;a href='http://zurb.foundation.org'&gt;Foundation&lt;/a&gt;, &lt;a href='http://blueprintcss.org/'&gt;Blueprint&lt;/a&gt; and &lt;a href='http://compass-style.org'&gt;Compass&lt;/a&gt;, you&amp;#8217;ll noticed that they all have their own typography, color sets, and grid systems.&lt;/p&gt;
 
-&lt;h2 id='design_involves_mathematics'&gt;Design involves Mathematics&lt;/h2&gt;
+&lt;h2 id='design_and_mathematics'&gt;Design and Mathematics&lt;/h2&gt;
 
-&lt;p&gt;I used to think that being able to apply proportion and rhythm in design is measured by one&amp;#8217;s innate ability. However true for some people&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;, it turns out that you can be scientific/mathematical in this approach to attain a visually pleasing result&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;I used to think that being able to apply proportion and rhythm in design is based by one&amp;#8217;s innate ability (and/or experience). However true for some people&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;, it turns out that you can be scientific/mathematical in this approach and still attain a visually pleasing result&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#8217;s take a look at the &lt;a href='http://en.wikipedia.org/wiki/Golden_ratio'&gt;Golden Ratio&lt;/a&gt;.&lt;/p&gt;
 
@@ -268,27 +272,21 @@ sidebar = 366.49....&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Not necesarrily an award winning layout but it works.&lt;/p&gt;
 
-&lt;p&gt;So how do we apply this concept in front-end development? &lt;a href='http://en.wikipedia.org/wiki/Grid_(page_layout'&gt;Grids&lt;/a&gt;.&lt;/p&gt;
-
 &lt;h2 id='grid'&gt;Grid&lt;/h2&gt;
 
 &lt;p&gt;A grid system is extremely helpful in rapid design to html/css prototyping. By specifying the &lt;strong&gt;total columns&lt;/strong&gt;, the &lt;strong&gt;column width&lt;/strong&gt;, and the &lt;strong&gt;gutter width&lt;/strong&gt;, it makes it easier for the front-end developer to scaffold everything in place. This is also a design requirement in &lt;a href='http://en.wikipedia.org/wiki/Responsive_Web_Design'&gt;Responsive Web Design&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;We can compare website design (and development) to something like designing and building a house. If you start with the right foundation, your house tends to last longer. Not to mention that it generates confidence and security to the people living in it.&lt;/p&gt;
+&lt;p&gt;I suggest trying out css frameworks like &lt;a href='http://blueprintcss.org'&gt;Blueprint&lt;/a&gt; which has a low learning curve and something that I&amp;#8217;ve personally used. A friend of mine suggested that the &lt;a href='http://zurb.foundation.org'&gt;Foundation&lt;/a&gt; framework&amp;#8217;s interesting to look into.&lt;/p&gt;
 
-&lt;h2 id='where_to_start'&gt;Where to start&lt;/h2&gt;
-
-&lt;p&gt;I can only discuss this much. I highly recommend trying out &lt;a href='http://blueprintcss.org'&gt;Blueprint&lt;/a&gt; which has a low learning curve and something that I&amp;#8217;ve personally used in the past. A friend of mine suggested that the &lt;a href='http://zurb.foundation.org'&gt;Foundation&lt;/a&gt; framework&amp;#8217;s good too.&lt;/p&gt;
-
-&lt;p&gt;I currently use &lt;a href='http://compass-style.org'&gt;Compass&lt;/a&gt; and &lt;a href='http://susy.oddbird.net/'&gt;Susy&lt;/a&gt; as my SASS/CSS framework.&lt;/p&gt;
+&lt;p&gt;I wish I could discuss more about this, but the topic is so eclectic to elaborate.&lt;/p&gt;
 
 &lt;h2 id='final_thoughts'&gt;Final Thoughts&lt;/h2&gt;
 
-&lt;p&gt;Using grids can sometimes feel restricting. Especially if you&amp;#8217;re trying to be different with standard layouts. But it helps a lot with getting things done and has proven useful by generations. In the end, I stick with it. Not because I don&amp;#8217;t wanna try something new, but because I wanna get things done.&lt;/p&gt;
+&lt;p&gt;I personally think that Using grids can sometimes feel a bit restricting. Especially when trying to be different from standard layouts. But then it also trains the designer to become disciplined in terms of his workflow and creates a middleground framework that teams can use to convey their ideas collaboratively.&lt;/p&gt;
 &lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
 &lt;p&gt;Designers who can &amp;#8216;guestimate&amp;#8217; a layout that still looks aesthetically proportionate.&lt;/p&gt;
 &lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
-&lt;p&gt;Creativity still plays a vital role in most things.&lt;/p&gt;
+&lt;p&gt;While creativity still plays a vital role in most things, technical knowledge is essential too.&lt;/p&gt;
 &lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
