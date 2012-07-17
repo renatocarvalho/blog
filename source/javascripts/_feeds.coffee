@@ -2,10 +2,15 @@ paths =
   dribbble: 'http://floating-summer-9664.herokuapp.com/dribbble'
   twitter:  'http://floating-summer-9664.herokuapp.com/twitter'
 
+
+paths =
+  dribbble: 'http://localhost:5000/dribbble'
+  twitter:  'http://localhost:5000/twitter'
+
 data = {}
 
-$.get paths.dribbble, (result) ->
-  result = JSON.parse result
+$.get paths.dribbble, (data) ->
+  result = JSON.parse data
   result = result.shots
   random_shot = result[Math.round Math.random() * (result.length - 1)]
   container = $ '.dribbble-shot'
@@ -19,8 +24,8 @@ $.get paths.dribbble, (result) ->
   title.attr 'href', random_shot.url
 
 
-$.get paths.twitter, (result) ->
-  result = JSON.parse result
+$.get paths.twitter, (data) ->
+  result = JSON.parse data
   result = result.splice 0, 5
   chunks = ""
   for item in result
