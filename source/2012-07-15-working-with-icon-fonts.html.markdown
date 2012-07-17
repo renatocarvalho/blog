@@ -1,22 +1,23 @@
 ---
 title: Working with Icon Fonts
 date: 2012-07-15 17:59 +08:00
+thumb: https://dl.dropbox.com/u/2281027/blog/font-icons-preview.jpg
 tags: css, workflow, code
 ---
 Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp on these devices.
 
 Some suggested creating two sets of images, while others use the `<svg>` tag. In my case, I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs [^1] and then use them as fonts in the `@font-family` css rule.
 
+The reason why I didn't go with the SVG route is because I needed to be able to minimize http requests [^foot] and also not clutter my HTML templating with a bunch of `<svg>` tags.
+
 [^1]: You can see an example of this technique in [FontAwesome](https://github.com/FortAwesome/Font-Awesome)'s [demo page](http://fortawesome.github.com/Font-Awesome/).
-
-The reason why I didn't go with the SVG route is because I needed to be able to minimize http requests [^foot] and also not clutter my HTML templating with a bunch of `<svg>` tags. Upon learning how you could map your icons to your 
-
 [^foot]: Similar to how we [sprite](http://www.w3schools.com/css/css_image_sprites.asp) our PNG icons.
-
 
 READMORE
 
-> Disclaimer: Most of what I'm writing here are lessons taught by experience. If there's a more efficient way, you can [tweet](http://twitter.com/jamesflorentino) me about it and i'll update this article and gladly credit you. We're also going to use the command line a bit.
+
+
+> Disclaimer: Most of what I'm writing here are lessons taught by experience. If there's a more efficient way, you can [tweet](http://twitter.com/jamesflorentino) me about it and i'll update this article and gladly credit you. We're also going to use the command a lot.
 
 Table of Contents
 -----------------
@@ -37,7 +38,7 @@ Required Applications {#required}
 Installation {#installation}
 ----------------------------
 
-We'll be using Inkscape to create our font library. Inkscape to define our [glyphs](http://en.wikipedia.org/wiki/Glyph). Installing this is pretty straightforward so go ahead and download it [^note].
+We'll be using Inkscape to define our [glyphs](http://en.wikipedia.org/wiki/Glyph) in an SVG file. Installing this is pretty straightforward so go ahead and download it [^note].
 
 [^note]: Installing this requires X11 in your machine if you're on a Mac OS.
 

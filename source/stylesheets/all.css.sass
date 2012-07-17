@@ -74,6 +74,7 @@ h6
 
 p
   color: darken($font-color, 0.1)
+  font-family: $font-family-body
 
 a
   text-decoration: none
@@ -112,7 +113,8 @@ h1, h2, h3, h4, h5, h6
 // font icons
 // ====================================================
 .icon
-  font-family: JamesIcons
+  font-family: JamesIcons !important
+  text-transform: lowercase
   &.twitter:after
     content: 't'
 
@@ -143,9 +145,10 @@ h1, h2, h3, h4, h5, h6
 #footer
   font-size: 0.9em
   text-align: center
+  border-top: 3px solid rgba($border-color, 0.25)
 
 #main,
-#sidebar
+#sidebar,
   @extend ._gradient-background
   border-top: 5px solid rgba($border-color, 0.5)
 
@@ -172,6 +175,7 @@ time
 
 #sidebar
   li
+    font-family: $font-family-body
     border-left: 3px solid rgba($border-color, 0.25)
     &:hover
       border-left-color: $title-color
@@ -185,6 +189,17 @@ time
       &:hover
         color: white
         @extend ._text-glow
+  h3 .icon
+    padding-right: 5px
+  .tweets li a
+    color: inherit
+    border: 0
+    font-style: italic
+  .dribbble-shot a.title
+    font-weight: 500
+    display: block
+    padding-top: 5px
+    text-align: center
 
 .recent-articles
   article
@@ -192,3 +207,12 @@ time
   time, .tags
     font-size: 0.9em
     font-weight: 500
+
+
+// ========================================
+// Media Queries
+// ========================================
+$media-layout: 24
++at-breakpoint(300em 24)
+  .logo
+    background: black

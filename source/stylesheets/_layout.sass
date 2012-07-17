@@ -55,6 +55,7 @@ blockquote
   
   .description
     position: relative
+    display: inline-block
     top: -20px
     left: 40px
 
@@ -89,13 +90,12 @@ blockquote
     +reset()
     display: inline-block
     +squish(1)
-
 #footer
   +span-columns(24)
   +prefix(1)
   margin-top: +span(1)
-  padding-top: +span(0.5)
-  height: +span(7)
+  padding-top: +span(1)
+  padding-bottom: +span(7)
 
 .tags
   +span-columns(18)
@@ -163,7 +163,12 @@ article
     clear: both
     margin-top: +span(0.5)
 
+
 #author-bio
+  p
+    margin-bottom: +span(0.25)
+  ul
+    clear: both
   img
     +span-columns(9)
     margin: +columns(2)

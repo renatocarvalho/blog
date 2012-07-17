@@ -1,15 +1,6 @@
 %aside#sidebar
 
-  %h2 About James
 
-  #author-bio
-    = image_tag '/images/profile.jpg', :width => '70'
-    %p I write things about art, design, programming and the web.
-    %ul.icons
-      %li= link_to '', 'https://twitter.com/jamesflorentino', :class => 'twitter icon'
-      %li= link_to '', 'https://github.com/jamesflorentino', :class => 'github icon'
-      %li= link_to '', 'http://dribbble.com/jamesflorentino', :class => 'dribbble icon'
-      %li= link_to '', 'http://stackoverflow.com/users/1089685/james-florentino', :class => 'stackoverflow icon'
 
   %h3 Recent Articles
   %ul
@@ -25,3 +16,25 @@
         %a{:href => "/#{tag_path(tag)}"}
           = tag
         %span="(#{articles.size})"
+
+
+  #author-bio
+    %h3 About James
+    = image_tag '/images/profile.jpg', :width => '70'
+    %p I write things about art, design, programming and the web.
+    %ul.icons
+      %li= link_to '', 'https://twitter.com/jamesflorentino', :class => 'twitter icon'
+      %li= link_to '', 'https://github.com/jamesflorentino', :class => 'github icon'
+      %li= link_to '', 'http://dribbble.com/jamesflorentino', :class => 'dribbble icon'
+      %li= link_to '', 'http://stackoverflow.com/users/1089685/james-florentino', :class => 'stackoverflow icon'
+
+  %h3
+    %span.twitter.icon
+    Recent Tweets
+  .tweets
+    %ul
+
+  %h3 Random Dribble Shot
+  .dribbble-shot
+    %a.teaser
+    %a.title
