@@ -227,17 +227,17 @@ a.cool.icon:after {
 
 &lt;h2 id='design_and_mathematics'&gt;Design and Mathematics&lt;/h2&gt;
 
-&lt;p&gt;I used to think that being able to apply proportion and rhythm in design is based by one&amp;#8217;s innate ability (and/or experience). However true for some people&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;, it turns out that you can be scientific/mathematical in this approach and still attain a visually pleasing result&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;I used to think that being able to apply proportion and rhythm in design is based on one&amp;#8217;s innate ability (and/or experience). However true for some people&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;, it turns out that you can be scientific/mathematical towards this problem and still attain a visually pleasing result&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#8217;s take a look at the &lt;a href='http://en.wikipedia.org/wiki/Golden_ratio'&gt;Golden Ratio&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id='the_golden_ratio'&gt;The Golden Ratio&lt;/h2&gt;
 
-&lt;p&gt;It basically consists of two numerical values. One which is wider than the other but in a way that is proportionate to its sum with its smaller other. We can describe this simply in a math equation:&lt;/p&gt;
+&lt;p&gt;It basically consists of two numerical values. One which is wider than the other but in a way that is proportionate to its sum with its smaller other. We can describe this simply in an equation.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;(a + b) / a = a + b&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;In web design, you can get the next proportionate neighbor by either multiplying or dividing its width value by 1.61803399. So for example, if you have 960px container, an ideal container for your content would be 593px since:&lt;/p&gt;
+&lt;p&gt;In web design, you can get the next proportionate element by either multiplying or dividing its width value by 1.61803399. So for example, if you have 960px container, an ideal container for your content would be 593px since:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;container = 960
 content = container / 1.61803399
