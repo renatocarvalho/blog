@@ -223,7 +223,7 @@ a.cool.icon:after {
 
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;If you&amp;#8217;ve been doing a lot of digging into CSS frameworks like &lt;a href='http://zurb.foundation.org'&gt;Foundation&lt;/a&gt;, &lt;a href='http://blueprintcss.org/'&gt;Blueprint&lt;/a&gt; and &lt;a href='http://compass-style.org'&gt;Compass&lt;/a&gt;, you&amp;#8217;ll noticed that they all have their own typography, color sets, and grid systems.&lt;/p&gt;
+&lt;p&gt;If you&amp;#8217;ve been doing a lot of digging into CSS frameworks like &lt;a href='http://zurb.foundation.org'&gt;Foundation&lt;/a&gt;, &lt;a href='http://blueprintcss.org/'&gt;Blueprint&lt;/a&gt; and &lt;a href='http://compass-style.org'&gt;Compass&lt;/a&gt;, you&amp;#8217;ll notice that they all have their own typography, color sets, and grid systems.&lt;/p&gt;
 
 &lt;h2 id='design_and_mathematics'&gt;Design and Mathematics&lt;/h2&gt;
 
