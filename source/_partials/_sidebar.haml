@@ -3,7 +3,7 @@
 
 
   .sidebar.recent
-    %h3 Recent Articles
+    %h3 Articles
     %ul
       - blog.articles[0...10].each do |article|
         %li
@@ -22,7 +22,7 @@
   #author-bio.sidebar.bio
     %h3
       %span.jf.icon
-      About James
+      Hello
     = image_tag '/images/profile.jpg', :width => '70'
     %p I write things about art, design, programming and the web.
     %ul.icons
@@ -34,7 +34,7 @@
   .sidebar.tweets
     %h3
       %span.twitter.icon
-      Recent Tweets
+      Blabber
     .tweets
       %ul
 
