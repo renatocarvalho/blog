@@ -50,13 +50,7 @@
   .sidebar.dribbble
     +span-columns(24)
 
-  .recent-articles
-    article
-      +span-columns(24)
-
-
 @media screen and (max-width: 480px)
-
   $grid-padding: 0
 
   body
@@ -128,18 +122,23 @@
   time
     margin: 0
     padding: 0
-      top: +span(0.25)
-    text-align: left
-    font-size: 1.25em
+    text-align: right
+    font-size: 1.1em
+    +span-columns(10 omega)
 
   .tags
+    +span-columns(14)
     h6
       display: none
     ul
       display: block
       +reset()
     li
-      font-size: 1.25em
+      font-size: 1.1em
+
+  time, .tags
+    padding-top: +span(0.5)
+    padding-bottom: +span(0.5)
 
   .summary
     margin-top: +span(1.5)
