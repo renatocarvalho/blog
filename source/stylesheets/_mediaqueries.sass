@@ -1,0 +1,98 @@
+// ========================================
+// Media Queries
+// ========================================
+
+@media screen and (max-width: 768px)
+
+  $grid-padding: 0
+
+  body
+    font-size: 16px
+
+  .container
+    +container()
+
+  #banner,
+  #menu,
+  #main,
+  .recent-articles article,
+  .recent-articles,
+  #sidebar,
+  #footer,
+    +span-columns(24)
+
+  #banner
+    +gradient-black-bottom()
+    padding-top: +span(2.5)
+    padding-bottom: +span(0.75)
+    height: auto
+    .logo
+      text-align: center
+      img
+        width: +columns(22)
+        height: auto
+    .description
+      +reset()
+      display: block
+      text-align: center
+      position: relative
+      top: +span(0.5) * -1
+      left: 0
+      +prefix(5)
+      +suffix(2)
+
+  #menu
+    +reset()
+    padding-bottom: +span(0.25)
+    padding-top: +span(0.25)
+    height: auto
+    font-size: 1.4em
+    background: rgba(black, 0.5)
+    ul
+      text-align: center
+
+  .recent-articles
+    article
+      +reset-columns()
+
+  #sidebar
+    +prefix(1)
+    +suffix(1)
+    .dribbble-shot
+      img, .title
+        +span-columns(24)
+      .title
+        font-size: 1.3em
+
+
+  #author-bio
+    font-size: 1.2em
+    img
+      +prefix(1)
+      +suffix(1)
+      +span-columns(12)
+
+  h1
+    padding:
+      bottom: +span(0.5)
+      top: +span(0.5)
+
+  time
+    margin: 0
+    padding: 0
+      top: +span(0.25)
+    text-align: left
+    font-size: 1.25em
+
+  .tags
+    h6
+      display: none
+    ul
+      display: block
+      +reset()
+    li
+      font-size: 1.25em
+
+  .summary
+    margin-top: +span(1.5)
+

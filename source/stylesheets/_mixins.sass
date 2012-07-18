@@ -11,3 +11,37 @@
 @function span($x)
   @return $column-width * $x
 
+
+// ========================================
+// Custom Fonts
+// ========================================
++font-face("JamesIcons", font-files("/images/jamesicon.ttf", "/images/jamesicon.svg"))
+
+// ========================================
+// Visual Mixins
+// ========================================
+
+=border-bottom-ruler
+  border-bottom: 1px solid rgba($border-color, 0.25)
+
+
+=gradient-black-bottom
+  $direction: 50% 0%
+  $top: rgba(black, 0)
+  $bottom: rgba(black, 0.5)
+  +background-image(linear-gradient($direction, $top, $bottom))
+
+// ========================================
+// Classes
+// ========================================
+._gradient-background
+  $direction: 50% 0%
+  $top: rgba(black, 0.35)
+  $bottom: rgba(black, 0)
+  +background-image(linear-gradient($direction, $top, $bottom))
+
+
+._text-glow
+  +text-shadow(0 0 15px $border-color)
+
+

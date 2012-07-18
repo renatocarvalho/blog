@@ -37,6 +37,7 @@ code
 pre code
   display: block
   padding: +span(0.5)
+  overflow: auto
 
 blockquote
   +preserve()
@@ -58,6 +59,10 @@ blockquote
     display: inline-block
     top: -20px
     left: 40px
+
+  .logo img
+    width: +image-width('asset/logo.png')
+    height: +image-height('asset/logo.png')
 
 #menu
   +span-columns(6 omega)
@@ -93,6 +98,7 @@ blockquote
 #footer
   +span-columns(24)
   +prefix(1)
+  +preserve()
   margin-top: +span(1)
   padding-top: +span(1)
   padding-bottom: +span(7)

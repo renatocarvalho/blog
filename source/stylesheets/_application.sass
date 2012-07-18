@@ -1,0 +1,182 @@
+// ========================================
+// font-size, colors, css3 stuff can be
+// placed here.
+// ----------------------------------------
+// For paddings, margins, heights, widths
+// please write to _layout.sass
+// ----------------------------------------
+// For base colors, please refer to 
+// _base.sass
+// ========================================
+
+body
+  $img-top: url(/images/background.png) center top no-repeat
+  $img-repeat: url(/images/background_dot.png) center top
+  $img-bottom: url(/images/background-bottom.png) center bottom no-repeat
+  background: $img-bottom, $img-top, $img-repeat, black
+  font-weight: 300
+
+h1
+  font-size: 2em
+  +border-bottom-ruler()
+
+h2
+  font-size: 1.5em
+  +border-bottom-ruler()
+
+h3
+  font-size: 1.25em
+  text-transform: uppercase
+  +border-bottom-ruler()
+
+h4
+  font-size: 1em
+  text-transform: uppercase
+  +border-bottom-ruler()
+
+h6
+  font-size: 0.9em
+  font-weight: 300
+  text-transform: uppercase
+
+p
+  color: darken($font-color, 0.1)
+  font-family: $font-family-body
+
+a
+  text-decoration: none
+  border-bottom: 1px solid rgba($link-color, 0.25)
+
+code
+  color: $code-color
+  background: rgba(black, 0.5)
+  border: 1px solid rgba($border-color, 0.25)
+
+blockquote
+  border-left: 3px solid rgba($border-color, 0.25)
+
+sup
+  font-weight: 600
+  padding: 1px
+
+hr
+  border-color: rgba($border-color, 0.5)
+  margin-top: +span(1)
+  margin-bottom: +span(1)
+
+h1, h2, h3, h4, h5, h6
+  @extend ._text-glow
+  color: $title-color
+  a
+    text-decoration: none
+    color: inherit
+    border: none
+    &:visited,
+    &:active
+      color: inherit
+
+
+// ====================================================
+// font icons
+// ====================================================
+.icon
+  font-family: JamesIcons !important
+  text-transform: lowercase
+  &.twitter:after
+    content: 't'
+
+  &.dribbble:after
+    content: 'd'
+
+  &.github:after
+    content: 'g'
+
+  &.stackoverflow:after
+    content: 's'
+
+
+// ====================================================
+// banner
+// ====================================================
+#banner
+  .logo a
+    border: 0
+  .description
+    text-transform: uppercase
+    font-weight: 300
+    font-size: 0.9em
+    letter-spacing: 0.1em
+    color: #cee
+    
+
+#footer
+  font-size: 0.9em
+  text-align: center
+  border-top: 3px solid rgba($border-color, 0.25)
+
+#main,
+#sidebar,
+  @extend ._gradient-background
+  border-top: 5px solid rgba($border-color, 0.5)
+
+#menu
+  li
+    text-transform: uppercase
+  a
+    font-weight: 600
+    text-decoration: none
+    border: 0
+    color: $title-color
+    +text-shadow(0 1px 2px black)
+    &:hover
+      @extend ._text-glow
+      color: $title-color
+
+.tags
+  font-weight: 500
+
+time
+  color: $border-color
+  font-weight: 500
+  text-align: right
+
+#sidebar
+  li
+    font-family: $font-family-body
+    border-left: 3px solid rgba($border-color, 0.25)
+    &:hover
+      border-left-color: $title-color
+  ul.icons
+    text-align: center
+  ul.icons li
+    +reset()
+    font-size: 1.5em
+    border: 0
+    a
+      color: inherit
+      border: none
+      font-weight: 100
+      &:hover
+        color: white
+        @extend ._text-glow
+  h3 .icon
+    padding-right: 5px
+  .tweets li a
+    color: inherit
+    border: 0
+    font-style: italic
+  .dribbble-shot
+    text-align: center
+  .dribbble-shot a.title
+    font-weight: 700
+    display: block
+    padding-top: +span(0.25)
+    border: 0
+
+.recent-articles
+  article
+    border-top: 5px solid rgba($border-color, 0.25)
+  time, .tags
+    font-size: 0.9em
+    font-weight: 500
+
