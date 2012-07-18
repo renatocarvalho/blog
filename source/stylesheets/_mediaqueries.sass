@@ -2,12 +2,65 @@
 // Media Queries
 // ========================================
 
+
 @media screen and (max-width: 768px)
+  .tags
+    +reset()
+
+    ul
+      +reset()
+      padding-top: +span(0.25)
+      padding-bottom: +span(0.5)
+    h6
+      display: none
+
+  $left: 16
+  $right: 24 - $left
+
+  #banner
+    +span-columns($left)
+  
+  #menu
+    +span-columns($right omega)
+    padding-top: +span(2.5)
+    font-size: 1.3em
+
+
+  #main, #sidebar
+    +span-columns(24)
+
+  ul.icons
+    +span-columns(24,24)
+    .icon
+      font-size: 2.5em
+
+  .dribbble-shot
+    .title
+      font-size: 1.3em
+
+
+  .sidebar.bio,
+  .sidebar.topics
+    +span-columns(12)
+
+  .sidebar.recent,
+  .sidebar.tweets,
+    +span-columns(12 omega)
+
+  .sidebar.dribbble
+    +span-columns(24)
+
+  .recent-articles
+    article
+      +span-columns(24)
+
+
+@media screen and (max-width: 480px)
 
   $grid-padding: 0
 
   body
-    font-size: 16px
+    font-size: 14px
 
   .container
     +container()
@@ -18,11 +71,14 @@
   .recent-articles article,
   .recent-articles,
   #sidebar,
-  #footer,
+  #footer
     +span-columns(24)
+
 
   #banner
     +gradient-black-bottom()
+
+  #banner
     padding-top: +span(2.5)
     padding-bottom: +span(0.75)
     height: auto
@@ -51,26 +107,18 @@
     ul
       text-align: center
 
-  .recent-articles
-    article
-      +reset-columns()
-
   #sidebar
     +prefix(1)
     +suffix(1)
-    .dribbble-shot
-      img, .title
-        +span-columns(24)
-      .title
-        font-size: 1.3em
 
 
   #author-bio
-    font-size: 1.2em
+    +preserve()
     img
-      +prefix(1)
-      +suffix(1)
-      +span-columns(12)
+      width: +columns(20)
+      +squish(1)
+    p
+      clear: both
 
   h1
     padding:

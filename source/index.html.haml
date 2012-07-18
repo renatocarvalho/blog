@@ -7,8 +7,8 @@
   .tags
     %h6 Pubished Under
     %ul
-    - featured_article.tags.each do |tag|
-      %li= link_to tag, tag_path(tag)
+      - featured_article.tags.each do |tag|
+        %li= link_to tag, tag_path(tag)
 
   .summary
     - if featured_article.data.thumb
@@ -34,5 +34,5 @@
       %time= article.date.strftime('%B %e, %Y')
       .tags
         %ul
-        - article.tags.each do |tag|
-          %li= link_to tag, tag_path(tag)
+          - article.tags.each do |tag|
+            %li= link_to tag, tag_path(tag)

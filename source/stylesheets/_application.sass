@@ -94,6 +94,9 @@ h1, h2, h3, h4, h5, h6
   &.stackoverflow:after
     content: 's'
 
+  &.jf:after
+    content: 'j'
+
 
 // ====================================================
 // banner
@@ -128,6 +131,7 @@ h1, h2, h3, h4, h5, h6
     border: 0
     color: $title-color
     +text-shadow(0 1px 2px black)
+    +text-shadow(0 0px 12px $border-color)
     &:hover
       @extend ._text-glow
       color: $title-color
@@ -149,7 +153,6 @@ time
   ul.icons
     text-align: center
   ul.icons li
-    +reset()
     font-size: 1.5em
     border: 0
     a

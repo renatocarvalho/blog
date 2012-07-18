@@ -2,24 +2,27 @@
 
 
 
-  %h3 Recent Articles
-  %ul
-    - blog.articles[0...10].each do |article|
-      %li
-        %a{:href => article.url}= article.title
-        //%span= article.date.strftime('%b %e')
+  .sidebar.recent
+    %h3 Recent Articles
+    %ul
+      - blog.articles[0...10].each do |article|
+        %li
+          %a{:href => article.url}= article.title
 
-  %h3 Topics
-  %ul
-    - blog.tags.each do |tag, articles|
-      %li
-        %a{:href => "/#{tag_path(tag)}"}
-          = tag
-        %span="(#{articles.size})"
+  .sidebar.topics
+    %h3 Topics
+    %ul
+      - blog.tags.each do |tag, articles|
+        %li
+          %a{:href => "/#{tag_path(tag)}"}
+            = tag
+          %span="(#{articles.size})"
 
 
-  #author-bio
-    %h3 About James
+  #author-bio.sidebar.bio
+    %h3
+      %span.jf.icon
+      About James
     = image_tag '/images/profile.jpg', :width => '70'
     %p I write things about art, design, programming and the web.
     %ul.icons
@@ -28,13 +31,17 @@
       %li= link_to '', 'http://dribbble.com/jamesflorentino', :class => 'dribbble icon'
       %li= link_to '', 'http://stackoverflow.com/users/1089685/james-florentino', :class => 'stackoverflow icon'
 
-  %h3
-    %span.twitter.icon
-    Recent Tweets
-  .tweets
-    %ul
+  .sidebar.tweets
+    %h3
+      %span.twitter.icon
+      Recent Tweets
+    .tweets
+      %ul
 
-  %h3 Random Dribble Shot
-  .dribbble-shot
-    %a.teaser
-    %a.title
+  .sidebar.dribbble
+    %h3
+      %span.dribbble.icon
+      Random Dribble
+    .dribbble-shot
+      %a.teaser
+      %a.title

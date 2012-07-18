@@ -18,7 +18,7 @@ $.get paths.dribbble, (data) ->
   teaser = container.find '.teaser'
   title = container.find '.title'
   teaser.append """
-    <img src="#{random_shot.image_teaser_url}" />
+    <img src="#{random_shot.image_url}" />
     """
   title.text random_shot.title
   teaser.attr 'href', random_shot.url
