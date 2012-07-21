@@ -5,10 +5,117 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2012-07-15T17:59:00+08:00</updated>
+  <updated>2012-07-21T20:52:00+08:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Spriting with SVG images</title>
+    <link rel="alternate" href="/2012/07/21/svg-spriting-in-css.html"/>
+    <id>/2012/07/21/svg-spriting-in-css.html</id>
+    <published>2012-07-21T20:52:00+08:00</published>
+    <updated>2012-07-21T20:52:00+08:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <summary type="html">&lt;p&gt;As a follow up from my previous article about my workflow in implementing &lt;a href='http://blog.jamesflorentino.com/2012/07/15/working-with-icon-fonts.html'&gt;icon fonts in websites&lt;/a&gt;, today I&amp;#8217;ll be discussing about using SVG as background images in CSS.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#8217;re familiar with &lt;a href='http://en.wikipedia.org/wiki/Texture_atlas'&gt;atlassing&lt;/a&gt; (or CSS spriting), the process can be done the same way with SVGs. This time, you&amp;#8217;re not bound to one color. You can use gradients, clipping masks, and transparencies while still keeping your mark-up and CSS clean (no &lt;code&gt;&amp;lt;SVG&amp;gt;&lt;/code&gt; tags!).&lt;/p&gt;
+
+&lt;p&gt;</summary>
+    <content type="html">&lt;p&gt;As a follow up from my previous article about my workflow in implementing &lt;a href='http://blog.jamesflorentino.com/2012/07/15/working-with-icon-fonts.html'&gt;icon fonts in websites&lt;/a&gt;, today I&amp;#8217;ll be discussing about using SVG as background images in CSS.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#8217;re familiar with &lt;a href='http://en.wikipedia.org/wiki/Texture_atlas'&gt;atlassing&lt;/a&gt; (or CSS spriting), the process can be done the same way with SVGs. This time, you&amp;#8217;re not bound to one color. You can use gradients, clipping masks, and transparencies while still keeping your mark-up and CSS clean (no &lt;code&gt;&amp;lt;SVG&amp;gt;&lt;/code&gt; tags!).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#8217;s how my SVG texture sheet looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt='SVG Elements in Inkscape' src='http://i.imgur.com/OQ9A7.png' /&gt;&lt;/p&gt;
+
+&lt;p&gt;I chose Inkscape as my vector editor because it&amp;#8217;s free and enables me to edit the XML tree inside the program. My only complain would be the coordinates system since it starts from bottom left, but let&amp;#8217;s leave that for another topic.&lt;/p&gt;
+
+&lt;p&gt;Things to note when laying out your vector elements in your SVG sheet file:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Round the values for the coordinates (x, y) and dimensions (width, height).&lt;/li&gt;
+
+&lt;li&gt;Convert all text objects into path.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id='html_and_css'&gt;HTML and CSS&lt;/h3&gt;
+
+&lt;p&gt;Our basic mark-up:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;style.css&amp;quot; /&amp;gt;
+
+&amp;lt;section&amp;gt;
+  &amp;lt;h1 class=&amp;quot;logo&amp;quot;&amp;gt;Atlantis&amp;lt;/h1&amp;gt;
+  &amp;lt;ul&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a class=&amp;quot;profile icon&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a class=&amp;quot;contact icon&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a class=&amp;quot;close icon&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+  &amp;lt;/ul&amp;gt;
+&amp;lt;/section&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;#8217;s define the CSS rules. If you&amp;#8217;re implementing a spritesheet for multiple elements, it&amp;#8217;s best practice to have one rule with multiple selectors.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;h1.logo,
+.icon {
+  background-image  : url(sprites.svg);
+  background-repeat : no-repeat;
+  overflow          : hidden;
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now the texture is applied to the affected DOM elements, let&amp;#8217;s proceed to defining their width, height and background position.&lt;/p&gt;
+
+&lt;p&gt;Starting with the logo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;h1.logo {
+  width               : 190px;
+  height              : 200px;
+  background-position : 0 0;
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;then the icons:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.icon {
+  width       : 60px;
+  height      : 50px;
+}
+
+.icon.profile {
+  background-position: 0px -200px; }
+
+.icon.contact {
+  background-position: 0 -250px; }
+
+.icon.close {
+  background-position: 0 -300px; }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we put it all together:&lt;/p&gt;
+&lt;iframe frameborder='0' height='450' src='http://bl.ocks.org/d/3156125/' width='100%'&gt; &lt;/iframe&gt;
+&lt;h2 id='what_this_technique_accomplishes'&gt;What this technique accomplishes&lt;/h2&gt;
+
+&lt;p&gt;Spriting SVGs in CSS benefits us two things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ensure the elements are crisp when viewed from high-density displays like the iPad 3 and rMacBook Pro.&lt;/li&gt;
+
+&lt;li&gt;Minimize http requests for improving load time (one SVG sheet to rule them all!).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='final_thoughts'&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;It&amp;#8217;s going to be an expensive future for web design projects. In a sense that it would require more time and skill set in getting things done. I guess being &amp;#8220;retina-ready&amp;#8221; isn&amp;#8217;t much of a deal for the average user since it&amp;#8217;s fairly new, but it won&amp;#8217;t be long &amp;#8216;til you hear from clients saying their websites look blurry in their high-density laptops and tablets.&lt;/p&gt;
+
+&lt;p&gt;Obviously, we&amp;#8217;re still confined to bitmap images for intricately detailed graphics. If you do pixel-perfect work for the web (e.g. detailed 3d icons), this will really bother you. You&amp;#8217;ll have to consider doing a 4x version to make it look sharp on high-resolution displays &lt;strong&gt;then&lt;/strong&gt; do the necessary client-side&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; or server-side&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; adjustments.&lt;/p&gt;
+&lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
+&lt;p&gt;Using the &lt;code&gt;background-sizing&lt;/code&gt; CSS property inside media-queries.&lt;/p&gt;
+&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
+&lt;p&gt;Serving static files depending on the user agent.&lt;/p&gt;
+&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+  </entry>
   <entry>
     <title>Working with Icon Fonts</title>
     <link rel="alternate" href="/2012/07/15/working-with-icon-fonts.html"/>
@@ -20,16 +127,12 @@
     </author>
     <summary type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.&lt;/p&gt;
 
-&lt;p&gt;Some suggested creating two sets of images, while others use the &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tag. I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
-
-&lt;p&gt;SVG looks nice, but I need to be able to minimize http requests &lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; and avoid clutter my HTML templating with a bunch of &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tags. So far was I able to create my own workflow and that&amp;#8217;s our topic of this article.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll discuss about a solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
 
 &lt;p&gt;</summary>
     <content type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.&lt;/p&gt;
 
-&lt;p&gt;Some suggested creating two sets of images, while others use the &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tag. I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
-
-&lt;p&gt;SVG looks nice, but I need to be able to minimize http requests &lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; and avoid clutter my HTML templating with a bunch of &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; tags. So far was I able to create my own workflow and that&amp;#8217;s our topic of this article.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll discuss about a solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -63,7 +166,7 @@
 
 &lt;h2 id='installation'&gt;Installation&lt;/h2&gt;
 
-&lt;p&gt;We&amp;#8217;ll be using Inkscape to define our &lt;a href='http://en.wikipedia.org/wiki/Glyph'&gt;glyphs&lt;/a&gt; in an SVG file. Installing this is pretty straightforward so go ahead and download it &lt;sup id='fnref:3'&gt;&lt;a href='#fn:3' rel='footnote'&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;#8217;ll be using Inkscape to define our &lt;a href='http://en.wikipedia.org/wiki/Glyph'&gt;glyphs&lt;/a&gt; in an SVG file. Installing this is pretty straightforward so go ahead and download it &lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;Fontforge is going to be responsible for converting our SVG file to different formats (ttf, otf, woff, etc.).&lt;/p&gt;
 
@@ -198,7 +301,7 @@ a.cool.icon:after {
 
 &lt;h2 id='final-thougths'&gt;Final Thoughts&lt;/h2&gt;
 
-&lt;p&gt;Well that certainly wasn&amp;#8217;t a walk in the park, especially if you didn&amp;#8217;t have command line experience before this. But if ever you reached all this way, congrats for levelling up your technical experience and for not giving up. Now be proud of yourself. Go out and have beer or something.&lt;/p&gt;
+&lt;p&gt;This method only works for flat colored icons. If you&amp;#8217;re looking for ways much simpler, you could try reading my post regarding using SVG as background images in CSS.&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Laugh and the world laughs with you, snore and you sleep alone.&lt;/p&gt;
@@ -206,10 +309,8 @@ a.cool.icon:after {
 &lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
 &lt;p&gt;You can see an example of this technique in &lt;a href='https://github.com/FortAwesome/Font-Awesome'&gt;FontAwesome&lt;/a&gt;&amp;#8217;s &lt;a href='http://fortawesome.github.com/Font-Awesome/'&gt;demo page&lt;/a&gt;.&lt;/p&gt;
 &lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
-&lt;p&gt;Similar to how we &lt;a href='http://www.w3schools.com/css/css_image_sprites.asp'&gt;sprite&lt;/a&gt; our PNG icons.&lt;/p&gt;
-&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:3'&gt;
 &lt;p&gt;Installing this requires X11 in your machine if you&amp;#8217;re on a Mac OS.&lt;/p&gt;
-&lt;a href='#fnref:3' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>The Golden Rectangle</title>
@@ -220,10 +321,10 @@ a.cool.icon:after {
     <author>
       <name>Article Author</name>
     </author>
-    <summary type="html">&lt;p&gt;I recall an episode in my life as a web designer where I&amp;#8217;d continuously struggle (and most of the time fail) in doing layouts. I couldn&amp;#8217;t think of a way to place all the pieces together without making it fall apart. This all changed when I learned about grids.&lt;/p&gt;
+    <summary type="html">&lt;p&gt;I recall an episode in my life as a web designer where I&amp;#8217;d continuously struggle (and most of the time fail) in doing layouts. This all changed when I learned about grids.&lt;/p&gt;
 
 &lt;p&gt;</summary>
-    <content type="html">&lt;p&gt;I recall an episode in my life as a web designer where I&amp;#8217;d continuously struggle (and most of the time fail) in doing layouts. I couldn&amp;#8217;t think of a way to place all the pieces together without making it fall apart. This all changed when I learned about grids.&lt;/p&gt;
+    <content type="html">&lt;p&gt;I recall an episode in my life as a web designer where I&amp;#8217;d continuously struggle (and most of the time fail) in doing layouts. This all changed when I learned about grids.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
