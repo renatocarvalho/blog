@@ -1,17 +1,16 @@
 ---
-title: Spriting with SVG images 
+title: Spriting SVG
 date: 2012-07-21 20:52 +08:00
 thumb: http://i.imgur.com/qb5Ps.png
 tags: css, code
 ---
 As a follow up from my previous article about my workflow in implementing [icon fonts in websites](http://blog.jamesflorentino.com/2012/07/15/working-with-icon-fonts.html), today I'll be discussing about using SVG as background images in CSS.
 
-If you're familiar with [atlassing](http://en.wikipedia.org/wiki/Texture_atlas) (or CSS spriting), the process can be done the same way with SVGs. This time, you're not bound to one color. You can use gradients, clipping masks, and transparencies while still keeping your mark-up and CSS clean (no `<SVG>` tags!).
+If you're familiar with [atlassing](http://en.wikipedia.org/wiki/Texture_atlas) (or CSS spriting), the process can be done the same way with SVGs. Unlike the icon fonts technique, you're not bound to one color. You can use gradients, clipping masks, and transparencies while still keeping your mark-up and CSS clean (no `<SVG>` tags!).
 
 READMORE
 
 Here's how my SVG texture sheet looks like:
-
 
 ![SVG Elements in Inkscape](http://i.imgur.com/OQ9A7.png)
 
@@ -75,7 +74,10 @@ then the icons:
 
 If we put it all together:
 
-<iframe width="100%" height="450" src="http://bl.ocks.org/d/3156125/" frameborder="0"> </iframe>
+<div style="overflow: hidden; width:100%; height: 450px;"><iframe width="100%" height="450" src="http://bl.ocks.org/d/3156125/" frameborder="0"> </iframe></div>
+
+If you're on a high-density display, you can view this [live sample](http://bl.ocks.org/d/3156125/)
+
 
 What this technique accomplishes
 --------------------------------
@@ -85,7 +87,7 @@ Spriting SVGs in CSS benefits us two things:
 - Ensure the elements are crisp when viewed from high-density displays like the iPad 3 and rMacBook Pro.
 - Minimize http requests for improving load time (one SVG sheet to rule them all!).
 
-[^1]: Using the `background-sizing` CSS property inside media-queries.
+[^1]: Using the `background-size` property.
 [^2]: Serving static files depending on the user agent.
 
 
