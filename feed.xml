@@ -10,7 +10,7 @@
     <name>Blog Author</name>
   </author>
   <entry>
-    <title>Spriting with SVG images</title>
+    <title>Spriting SVG</title>
     <link rel="alternate" href="/2012/07/21/svg-spriting-in-css.html"/>
     <id>/2012/07/21/svg-spriting-in-css.html</id>
     <published>2012-07-21T20:52:00+08:00</published>
@@ -20,12 +20,12 @@
     </author>
     <summary type="html">&lt;p&gt;As a follow up from my previous article about my workflow in implementing &lt;a href='http://blog.jamesflorentino.com/2012/07/15/working-with-icon-fonts.html'&gt;icon fonts in websites&lt;/a&gt;, today I&amp;#8217;ll be discussing about using SVG as background images in CSS.&lt;/p&gt;
 
-&lt;p&gt;If you&amp;#8217;re familiar with &lt;a href='http://en.wikipedia.org/wiki/Texture_atlas'&gt;atlassing&lt;/a&gt; (or CSS spriting), the process can be done the same way with SVGs. This time, you&amp;#8217;re not bound to one color. You can use gradients, clipping masks, and transparencies while still keeping your mark-up and CSS clean (no &lt;code&gt;&amp;lt;SVG&amp;gt;&lt;/code&gt; tags!).&lt;/p&gt;
+&lt;p&gt;If you&amp;#8217;re familiar with &lt;a href='http://en.wikipedia.org/wiki/Texture_atlas'&gt;atlassing&lt;/a&gt; (or CSS spriting), the process can be done the same way with SVGs. Unlike the icon fonts technique, you&amp;#8217;re not bound to one color. You can use gradients, clipping masks, and transparencies while still keeping your mark-up and CSS clean (no &lt;code&gt;&amp;lt;SVG&amp;gt;&lt;/code&gt; tags!).&lt;/p&gt;
 
 &lt;p&gt;</summary>
     <content type="html">&lt;p&gt;As a follow up from my previous article about my workflow in implementing &lt;a href='http://blog.jamesflorentino.com/2012/07/15/working-with-icon-fonts.html'&gt;icon fonts in websites&lt;/a&gt;, today I&amp;#8217;ll be discussing about using SVG as background images in CSS.&lt;/p&gt;
 
-&lt;p&gt;If you&amp;#8217;re familiar with &lt;a href='http://en.wikipedia.org/wiki/Texture_atlas'&gt;atlassing&lt;/a&gt; (or CSS spriting), the process can be done the same way with SVGs. This time, you&amp;#8217;re not bound to one color. You can use gradients, clipping masks, and transparencies while still keeping your mark-up and CSS clean (no &lt;code&gt;&amp;lt;SVG&amp;gt;&lt;/code&gt; tags!).&lt;/p&gt;
+&lt;p&gt;If you&amp;#8217;re familiar with &lt;a href='http://en.wikipedia.org/wiki/Texture_atlas'&gt;atlassing&lt;/a&gt; (or CSS spriting), the process can be done the same way with SVGs. Unlike the icon fonts technique, you&amp;#8217;re not bound to one color. You can use gradients, clipping masks, and transparencies while still keeping your mark-up and CSS clean (no &lt;code&gt;&amp;lt;SVG&amp;gt;&lt;/code&gt; tags!).&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -94,7 +94,9 @@
   background-position: 0 -300px; }&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;If we put it all together:&lt;/p&gt;
-&lt;iframe frameborder='0' height='450' src='http://bl.ocks.org/d/3156125/' width='100%'&gt; &lt;/iframe&gt;
+&lt;div style='overflow: hidden; width:100%; height: 450px;'&gt;&lt;iframe frameborder='0' height='450' src='http://bl.ocks.org/d/3156125/' width='100%'&gt; &lt;/iframe&gt;&lt;/div&gt;
+&lt;p&gt;If you&amp;#8217;re on a high-density display, you can view this &lt;a href='http://bl.ocks.org/d/3156125/'&gt;live sample&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id='what_this_technique_accomplishes'&gt;What this technique accomplishes&lt;/h2&gt;
 
 &lt;p&gt;Spriting SVGs in CSS benefits us two things:&lt;/p&gt;
@@ -111,7 +113,7 @@
 
 &lt;p&gt;Obviously, we&amp;#8217;re still confined to bitmap images for intricately detailed graphics. If you do pixel-perfect work for the web (e.g. detailed 3d icons), this will really bother you. You&amp;#8217;ll have to consider doing a 4x version to make it look sharp on high-resolution displays &lt;strong&gt;then&lt;/strong&gt; do the necessary client-side&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; or server-side&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; adjustments.&lt;/p&gt;
 &lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
-&lt;p&gt;Using the &lt;code&gt;background-sizing&lt;/code&gt; CSS property inside media-queries.&lt;/p&gt;
+&lt;p&gt;Using the &lt;code&gt;background-size&lt;/code&gt; property.&lt;/p&gt;
 &lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
 &lt;p&gt;Serving static files depending on the user agent.&lt;/p&gt;
 &lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
