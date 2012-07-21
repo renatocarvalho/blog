@@ -9,7 +9,9 @@
       = partial '_partials/menu'
 
       #main{:role => "main"}
-        = yield
+        %h1 About
+        .summary
+          = yield
 
       = partial '_partials/sidebar'
       = partial '_partials/footer'

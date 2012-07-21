@@ -6,12 +6,9 @@ tags: css, workflow, code
 ---
 Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.
 
-Some suggested creating two sets of images, while others use the `<svg>` tag. I ended up choosing the font icon route. A solution in which you create a font library with your icons as glyphs [^1] and then use them as fonts in the `@font-family` css rule.
-
-SVG looks nice, but I need to be able to minimize http requests [^foot] and avoid clutter my HTML templating with a bunch of `<svg>` tags. So far was I able to create my own workflow and that's our topic of this article.
+I'll discuss about a solution in which you create a font library with your icons as glyphs [^1] and then use them as fonts in the `@font-family` css rule. 
 
 [^1]: You can see an example of this technique in [FontAwesome](https://github.com/FortAwesome/Font-Awesome)'s [demo page](http://fortawesome.github.com/Font-Awesome/).
-[^foot]: Similar to how we [sprite](http://www.w3schools.com/css/css_image_sprites.asp) our PNG icons.
 
 READMORE
 
@@ -163,6 +160,6 @@ Now whenever we need to publish the SVG files to TTF, all we have to do is type 
 Final Thoughts {#final-thougths}
 --------------------------------
 
-Well that certainly wasn't a walk in the park, especially if you didn't have command line experience before this. But if ever you reached all this way, congrats for levelling up your technical experience and for not giving up. Now be proud of yourself. Go out and have beer or something.
+This method only works for flat colored icons. If you're looking for ways much simpler, you could try reading my post regarding using SVG as background images in CSS.
 
 > Laugh and the world laughs with you, snore and you sleep alone.

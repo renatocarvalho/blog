@@ -26,13 +26,14 @@
 
     %article.recent
       %h2= link_to article.title, article.url
-      .summary
-        - if thumb
-          %a{ :href => article.url }
-            = image_tag thumb
-        = summary
       %time= article.date.strftime('%B %e, %Y')
       .tags
         %ul
           - article.tags.each do |tag|
             %li= link_to tag, tag_path(tag)
+      .summary
+        - if thumb
+          %a{ :href => article.url }
+            = image_tag thumb
+        = summary
+

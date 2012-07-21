@@ -60,9 +60,15 @@ blockquote
     top: -20px
     left: 40px
 
-  .logo img
-    width: +image-width('asset/logo.png')
-    height: +image-height('asset/logo.png')
+  .logo
+    img, a
+      width: +image-width('asset/logo.png')
+      height: +image-height('asset/logo.png')
+    img
+      display: none
+    a
+      display: inline-block
+      background: url(/images/logotype.svg)
 
 
 #main
@@ -174,8 +180,11 @@ article
     display: block
     +reset()
   .summary
-    clear: both
-    margin-top: +span(0.5)
+    +span-columns(24)
+
+.summary
+  clear: both
+  margin-top: +span(0.25)
 
 
 #author-bio
