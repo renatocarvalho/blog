@@ -1,9 +1,9 @@
 .results
   %h1= @tag
   .articles
-  - if @articles
-    - @articles[0...12].each do |article|
-      %article
-        %h2= link_to article.title, article.url
-        %time= article.date.strftime('%B %e, %Y')
-        .summary= article.summary
+    - if @articles
+      - @articles[0...12].each do |article|
+        %article
+          %h2= link_to article.title, article.url
+          %time= article.date.strftime('%B %e, %Y')
+          .summary= article.summary

@@ -1,5 +1,5 @@
 ---
-title: Spriting SVG
+title: SVG Spriting in CSS
 date: 2012-07-21 20:52 +08:00
 thumb: http://i.imgur.com/qb5Ps.png
 tags: css, code
