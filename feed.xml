@@ -5,10 +5,59 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2012-07-21T20:52:00+08:00</updated>
+  <updated>2012-08-07T04:45:00+08:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Curiosity has landed</title>
+    <link rel="alternate" href="/2012/08/07/curiosity-has-landed.html"/>
+    <id>/2012/08/07/curiosity-has-landed.html</id>
+    <published>2012-08-07T04:45:00+08:00</published>
+    <updated>2012-08-07T04:45:00+08:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <summary type="html">&lt;p&gt;Watching the live feed from NASA headquarters while they anxiously monitor the &lt;a href='http://mars.jpl.nasa.gov/msl/'&gt;MSL&lt;/a&gt; land on Mars, was a breathtaking experience. You can see the fulfillment and joy they had when they Curiosity made touch down.&lt;/p&gt;
+</summary>
+    <content type="html">&lt;p&gt;Watching the live feed from NASA headquarters while they anxiously monitor the &lt;a href='http://mars.jpl.nasa.gov/msl/'&gt;MSL&lt;/a&gt; land on Mars, was a breathtaking experience. You can see the fulfillment and joy they had when they Curiosity made touch down.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#8217;re unfamiliar with what the Curiosity rover&amp;#8217;s goals are, here&amp;#8217;s a quick quote from its Wikipedia entry:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The MSL mission has four scientific goals: Determine whether Mars could ever have supported life - including the role of water, study the climate and geology of Mars. It is also useful preparation for future missions, perhaps a manned mission to Mars.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Determine the mineralogical composition of the Martian surface and near-surface geological materials.&lt;/li&gt;
+
+&lt;li&gt;Attempt to detect chemical building blocks of life (biosignatures).&lt;/li&gt;
+
+&lt;li&gt;Interpret the processes that have formed and modified rocks and soils.&lt;/li&gt;
+
+&lt;li&gt;Assess long-timescale (i.e., 4-billion-year) Martian atmospheric evolution processes.&lt;/li&gt;
+
+&lt;li&gt;Determine present state, distribution, and cycling of water and carbon dioxide.&lt;/li&gt;
+
+&lt;li&gt;Characterize the broad spectrum of surface radiation, including galactic radiation, cosmic radiation, solar proton events and secondary neutrons.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;What does this mean for us? Why the hell should we be happy about?&lt;/p&gt;
+
+&lt;p&gt;First, this will give scientists the ability to study the geological conditions of Mars, and know if the red planet ever supported life. This will also equip them with knowledge that can be used for manned mission to Mars in the future. It would be nice to be able to live in a different planet outisde Earth.&lt;/p&gt;
+
+&lt;p&gt;As a specie, we shouldn&amp;#8217;t put all our eggs into one basket. It&amp;#8217;s always better to spread humanity to the stars and colonize inhabitable worlds.&lt;/p&gt;
+
+&lt;p&gt;If you weren&amp;#8217;t able to watch the livestream earlier, here&amp;#8217;s a quick recap of what happened (along with some cinematic touch!):&lt;/p&gt;
+&lt;iframe allowfullscreen='1' frameborder='0' height='315' src='http://www.youtube.com/embed/N9hXqzkH7YA' width='560'&gt; &lt;/iframe&gt;
+&lt;p&gt;I love how NASA&amp;#8217;s approach in popularizing this to the mainstream audience. I think it&amp;#8217;s a good way into getting people interested in space again. Enticing them with the drama that happens during these missions will encourage people to be interested.&lt;/p&gt;
+
+&lt;p&gt;NASA, you are truly a force of nature. May your budget from the government increase and produce more work that makes the humanity proud and stand united.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Dare Mighty Things&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+  </entry>
   <entry>
     <title>SVG Spriting in CSS</title>
     <link rel="alternate" href="/2012/07/21/svg-spriting-in-css.html"/>
