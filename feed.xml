@@ -178,12 +178,12 @@
     </author>
     <summary type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;ll discuss about a solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll discuss about a solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-face&lt;/code&gt; css rule.&lt;/p&gt;
 
 &lt;p&gt;</summary>
     <content type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;ll discuss about a solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-family&lt;/code&gt; css rule.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll discuss about a solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-face&lt;/code&gt; css rule.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
