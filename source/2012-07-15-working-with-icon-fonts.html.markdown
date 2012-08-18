@@ -6,7 +6,7 @@ tags: css, workflow, code
 ---
 Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.
 
-I'll discuss about a solution in which you create a font library with your icons as glyphs [^1] and then use them as fonts in the `@font-family` css rule. 
+I'll discuss about a solution in which you create a font library with your icons as glyphs [^1] and then use them as fonts in the `@font-face` css rule. 
 
 [^1]: You can see an example of this technique in [FontAwesome](https://github.com/FortAwesome/Font-Awesome)'s [demo page](http://fortawesome.github.com/Font-Awesome/).
 
