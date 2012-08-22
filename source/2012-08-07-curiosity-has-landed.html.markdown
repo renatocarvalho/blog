@@ -26,7 +26,7 @@ If you weren't able to watch the livestream earlier, here's a quick recap of wha
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/N9hXqzkH7YA" frameborder="0" allowfullscreen="1"> </iframe>
 
-I love how NASA's approach in popularizing this to the mainstream audience. I think it's a good way into getting people interested in space again. Enticing them with the drama that happens during these missions will encourage people to be interested.
+I love how NASA's approach in popularizing this to the mainstream audience. I think it's a good way into getting people interested in space again.
 
 NASA, you are truly a force of nature. May your budget from the government increase and produce more work that makes the humanity proud and stand united.
 
