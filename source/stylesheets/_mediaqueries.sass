@@ -2,6 +2,11 @@
 // Media Queries
 // ========================================
 
+@media screen and (-webkit-min-device-pixel-ratio:2)
+  body
+    $img-top: url(/images/background-high.png) center top no-repeat
+    background: $img-bottom, $img-top, $img-repeat, black
+    background-size: auto, 1536px, auto
 
 @media screen and (max-width: 768px)
   .tags

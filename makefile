@@ -1,8 +1,8 @@
 all:
-	middleman -p 1234
+	bundle exec middleman -p 1234
 
 compile:
-	middleman build
+	bundle exec middleman build
 
 fonts:
 	fontforge -script convert-fonts.pe source/images/jamesicon.svg
