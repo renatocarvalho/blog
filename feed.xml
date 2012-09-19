@@ -5,16 +5,16 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2012-08-07T04:45:00+08:00</updated>
+  <updated>2012-08-07</updated>
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
     <title>Curiosity has landed</title>
-    <link rel="alternate" href="/2012/08/07/curiosity-has-landed.html"/>
+    <link href="/2012/08/07/curiosity-has-landed.html" rel="alternate"/>
     <id>/2012/08/07/curiosity-has-landed.html</id>
-    <published>2012-08-07T04:45:00+08:00</published>
-    <updated>2012-08-07T04:45:00+08:00</updated>
+    <published>2012-08-07</published>
+    <updated>2012-08-07</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -49,7 +49,7 @@
 &lt;p&gt;As a specie, we shouldn&amp;#8217;t put all our eggs into one basket. It&amp;#8217;s always better to spread humanity to the stars and colonize inhabitable worlds.&lt;/p&gt;
 
 &lt;p&gt;If you weren&amp;#8217;t able to watch the livestream earlier, here&amp;#8217;s a quick recap of what happened (along with some cinematic touch!):&lt;/p&gt;
-&lt;iframe allowfullscreen='1' frameborder='0' height='315' src='http://www.youtube.com/embed/N9hXqzkH7YA' width='560'&gt; &lt;/iframe&gt;
+&lt;iframe width='560' height='315' frameborder='0' allowfullscreen='1' src='http://www.youtube.com/embed/N9hXqzkH7YA'&gt; &lt;/iframe&gt;
 &lt;p&gt;I love how NASA&amp;#8217;s approach in popularizing this to the mainstream audience. I think it&amp;#8217;s a good way into getting people interested in space again.&lt;/p&gt;
 
 &lt;p&gt;NASA, you are truly a force of nature. May your budget from the government increase and produce more work that makes the humanity proud and stand united.&lt;/p&gt;
@@ -60,10 +60,10 @@
   </entry>
   <entry>
     <title>SVG Spriting in CSS</title>
-    <link rel="alternate" href="/2012/07/21/svg-spriting-in-css.html"/>
+    <link href="/2012/07/21/svg-spriting-in-css.html" rel="alternate"/>
     <id>/2012/07/21/svg-spriting-in-css.html</id>
-    <published>2012-07-21T20:52:00+08:00</published>
-    <updated>2012-07-21T20:52:00+08:00</updated>
+    <published>2012-07-21</published>
+    <updated>2012-07-21</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -143,7 +143,7 @@
   background-position: 0 -300px; }&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;If we put it all together:&lt;/p&gt;
-&lt;div style='overflow: hidden; width:100%; height: 450px;'&gt;&lt;iframe frameborder='0' height='450' src='http://bl.ocks.org/d/3156125/' width='100%'&gt; &lt;/iframe&gt;&lt;/div&gt;
+&lt;div style='overflow: hidden; width:100%; height: 450px;'&gt;&lt;iframe width='100%' height='450' frameborder='0' src='http://bl.ocks.org/d/3156125/'&gt; &lt;/iframe&gt;&lt;/div&gt;
 &lt;p&gt;If you&amp;#8217;re on a high-density display, you can view this &lt;a href='http://bl.ocks.org/d/3156125/'&gt;live sample&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id='what_this_technique_accomplishes'&gt;What this technique accomplishes&lt;/h2&gt;
@@ -169,10 +169,10 @@
   </entry>
   <entry>
     <title>Working with Icon Fonts</title>
-    <link rel="alternate" href="/2012/07/15/working-with-icon-fonts.html"/>
+    <link href="/2012/07/15/working-with-icon-fonts.html" rel="alternate"/>
     <id>/2012/07/15/working-with-icon-fonts.html</id>
-    <published>2012-07-15T17:59:00+08:00</published>
-    <updated>2012-07-15T17:59:00+08:00</updated>
+    <published>2012-07-15</published>
+    <updated>2012-07-15</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -365,10 +365,10 @@ a.cool.icon:after {
   </entry>
   <entry>
     <title>The Golden Rectangle</title>
-    <link rel="alternate" href="/2012/07/14/golden-rectangle-in-web-design.html"/>
+    <link href="/2012/07/14/golden-rectangle-in-web-design.html" rel="alternate"/>
     <id>/2012/07/14/golden-rectangle-in-web-design.html</id>
-    <published>2012-07-14T01:20:00+08:00</published>
-    <updated>2012-07-14T01:20:00+08:00</updated>
+    <published>2012-07-14</published>
+    <updated>2012-07-14</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -447,10 +447,10 @@ sidebar = 366.49....&lt;/code&gt;&lt;/pre&gt;
   </entry>
   <entry>
     <title>Hello, Universe.</title>
-    <link rel="alternate" href="/2012/07/11/welcome-to-my-blog.html"/>
+    <link href="/2012/07/11/welcome-to-my-blog.html" rel="alternate"/>
     <id>/2012/07/11/welcome-to-my-blog.html</id>
-    <published>2012-07-11T15:17:00+08:00</published>
-    <updated>2012-07-11T15:17:00+08:00</updated>
+    <published>2012-07-11</published>
+    <updated>2012-07-11</updated>
     <author>
       <name>Article Author</name>
     </author>
