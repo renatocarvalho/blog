@@ -12,10 +12,11 @@ Skill set
 ---------
 
 - HTML5 development (canvas, audio, video)
-- jQuery/Backbone.js
-- CoffeeScript
-- Node.js, socket.io
+- JavaScript/CoffeeScript
+- node.js with express.js
 - User-interface design
+- Data visualization design and animation
+- Wireframing to High Fidelity Mock-ups
 - Responsive web design (try resizing this page!)
 
 Current Availability: __limited freelance__
