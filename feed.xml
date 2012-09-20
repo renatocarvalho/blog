@@ -51,7 +51,7 @@
 &lt;p&gt;As a specie, we shouldn&amp;#8217;t put all our eggs into one basket. It&amp;#8217;s always better to spread humanity to the stars and colonize inhabitable worlds.&lt;/p&gt;
 
 &lt;p&gt;If you weren&amp;#8217;t able to watch the livestream earlier, here&amp;#8217;s a quick recap of what happened (along with some cinematic touch!):&lt;/p&gt;
-&lt;iframe frameborder='0' width='560' height='315' src='http://www.youtube.com/embed/N9hXqzkH7YA' allowfullscreen='1'&gt; &lt;/iframe&gt;
+&lt;iframe frameborder='0' width='560' height='315' allowfullscreen='1' src='http://www.youtube.com/embed/N9hXqzkH7YA'&gt; &lt;/iframe&gt;
 &lt;p&gt;I love how NASA&amp;#8217;s approach in popularizing this to the mainstream audience. I think it&amp;#8217;s a good way into getting people interested in space again.&lt;/p&gt;
 
 &lt;p&gt;NASA, you are truly a force of nature. May your budget from the government increase and produce more work that makes the humanity proud and stand united.&lt;/p&gt;
@@ -243,7 +243,7 @@
 
 &lt;h2 id='font-mapping'&gt;Creating the font library in Inkscape&lt;/h2&gt;
 
-&lt;p&gt;Open up Illustrator and create a 1000px by 1000px blank document. Then choose &lt;code&gt;File -&amp;gt; Import&lt;/code&gt; or &lt;code&gt;ctrl+i&lt;/code&gt; and choose the &lt;code&gt;icons-lib.svg&lt;/code&gt; file we saved earlier.&lt;/p&gt;
+&lt;p&gt;Open up Inkspace and create a 1000px by 1000px blank document. Then choose &lt;code&gt;File -&amp;gt; Import&lt;/code&gt; or &lt;code&gt;ctrl+i&lt;/code&gt; and choose the &lt;code&gt;icons-lib.svg&lt;/code&gt; file we saved earlier.&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Open up &lt;code&gt;Text -&amp;gt; SVG Font Editor&lt;/code&gt;.&lt;/li&gt;
