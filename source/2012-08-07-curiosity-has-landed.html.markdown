@@ -4,7 +4,7 @@ date: 2012-08-07 04:45 +08:00
 thumb: http://i.imgur.com/6a0Ly.jpg
 tags: opinions
 ---
-Watching the live feed from NASA headquarters while they anxiously monitor the [MSL](http://mars.jpl.nasa.gov/msl/) land on Mars, was a breathtaking experience. You can see the fulfillment and joy they had when they Curiosity made touch down.
+Watching the live feed from NASA headquarters while they anxiously monitor the [MSL](http://mars.jpl.nasa.gov/msl/) land on Mars, was a breathtaking experience.
 
 If you're unfamiliar with what the Curiosity rover's goals are, here's a quick quote from its Wikipedia entry:
 
