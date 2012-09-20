@@ -4,14 +4,14 @@
   <subtitle>Blog subtitle</subtitle>
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
-  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <link rel="self" href="http://blog.url.com/feed.xml"/>
   <updated>2012-08-07</updated>
   <author>
     <name>Blog Author</name>
   </author>
   <entry>
     <title>Curiosity has landed</title>
-    <link href="/2012/08/07/curiosity-has-landed.html" rel="alternate"/>
+    <link rel="alternate" href="/2012/08/07/curiosity-has-landed.html"/>
     <id>/2012/08/07/curiosity-has-landed.html</id>
     <published>2012-08-07</published>
     <updated>2012-08-07</updated>
@@ -51,7 +51,7 @@
 &lt;p&gt;As a specie, we shouldn&amp;#8217;t put all our eggs into one basket. It&amp;#8217;s always better to spread humanity to the stars and colonize inhabitable worlds.&lt;/p&gt;
 
 &lt;p&gt;If you weren&amp;#8217;t able to watch the livestream earlier, here&amp;#8217;s a quick recap of what happened (along with some cinematic touch!):&lt;/p&gt;
-&lt;iframe width='560' frameborder='0' height='315' allowfullscreen='1' src='http://www.youtube.com/embed/N9hXqzkH7YA'&gt; &lt;/iframe&gt;
+&lt;iframe width='560' height='315' src='http://www.youtube.com/embed/N9hXqzkH7YA' frameborder='0' allowfullscreen='1'&gt; &lt;/iframe&gt;
 &lt;p&gt;I love how NASA&amp;#8217;s approach in popularizing this to the mainstream audience. I think it&amp;#8217;s a good way into getting people interested in space again.&lt;/p&gt;
 
 &lt;p&gt;NASA, you are truly a force of nature. May your budget from the government increase and produce more work that makes the humanity proud and stand united.&lt;/p&gt;
@@ -62,7 +62,7 @@
   </entry>
   <entry>
     <title>SVG Spriting in CSS</title>
-    <link href="/2012/07/21/svg-spriting-in-css.html" rel="alternate"/>
+    <link rel="alternate" href="/2012/07/21/svg-spriting-in-css.html"/>
     <id>/2012/07/21/svg-spriting-in-css.html</id>
     <published>2012-07-21</published>
     <updated>2012-07-21</updated>
@@ -145,7 +145,7 @@
   background-position: 0 -300px; }&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;If we put it all together:&lt;/p&gt;
-&lt;div style='overflow: hidden; width:100%; height: 450px;'&gt;&lt;iframe width='100%' frameborder='0' height='450' src='http://bl.ocks.org/d/3156125/'&gt; &lt;/iframe&gt;&lt;/div&gt;
+&lt;div style='overflow: hidden; width:100%; height: 450px;'&gt;&lt;iframe width='100%' height='450' src='http://bl.ocks.org/d/3156125/' frameborder='0'&gt; &lt;/iframe&gt;&lt;/div&gt;
 &lt;p&gt;If you&amp;#8217;re on a high-density display, you can view this &lt;a href='http://bl.ocks.org/d/3156125/'&gt;live sample&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id='what_this_technique_accomplishes'&gt;What this technique accomplishes&lt;/h2&gt;
@@ -162,16 +162,16 @@
 
 &lt;p&gt;It&amp;#8217;s going to be an expensive future for web design projects. In a sense that it would require more time and skill set in getting things done. I guess being &amp;#8220;retina-ready&amp;#8221; isn&amp;#8217;t much of a deal for the average user since it&amp;#8217;s fairly new, but it won&amp;#8217;t be long &amp;#8216;til you hear from clients saying their websites look blurry in their high-density laptops and tablets.&lt;/p&gt;
 
-&lt;p&gt;Obviously, we&amp;#8217;re still confined to bitmap images for intricately detailed graphics. If you do pixel-perfect work for the web (e.g. detailed 3d icons), this will really bother you. You&amp;#8217;ll have to consider doing a 4x version to make it look sharp on high-resolution displays &lt;strong&gt;then&lt;/strong&gt; do the necessary client-side&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; or server-side&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt; adjustments.&lt;/p&gt;
+&lt;p&gt;Obviously, we&amp;#8217;re still confined to bitmap images for intricately detailed graphics. If you do pixel-perfect work for the web (e.g. detailed 3d icons), this will really bother you. You&amp;#8217;ll have to consider doing a 4x version to make it look sharp on high-resolution displays &lt;strong&gt;then&lt;/strong&gt; do the necessary client-side&lt;sup id='fnref:1'&gt;&lt;a rel='footnote' href='#fn:1'&gt;1&lt;/a&gt;&lt;/sup&gt; or server-side&lt;sup id='fnref:2'&gt;&lt;a rel='footnote' href='#fn:2'&gt;2&lt;/a&gt;&lt;/sup&gt; adjustments.&lt;/p&gt;
 &lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
 &lt;p&gt;Using the &lt;code&gt;background-size&lt;/code&gt; property.&lt;/p&gt;
-&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
+&lt;a rev='footnote' href='#fnref:1'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
 &lt;p&gt;Serving static files depending on the user agent.&lt;/p&gt;
-&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+&lt;a rev='footnote' href='#fnref:2'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>Working with Icon Fonts</title>
-    <link href="/2012/07/15/working-with-icon-fonts.html" rel="alternate"/>
+    <link rel="alternate" href="/2012/07/15/working-with-icon-fonts.html"/>
     <id>/2012/07/15/working-with-icon-fonts.html</id>
     <published>2012-07-15</published>
     <updated>2012-07-15</updated>
@@ -180,12 +180,12 @@
     </author>
     <summary type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;ll discuss about a solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-face&lt;/code&gt; css rule.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll discuss about a solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a rel='footnote' href='#fn:1'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-face&lt;/code&gt; css rule.&lt;/p&gt;
 
 &lt;p&gt;</summary>
     <content type="html">&lt;p&gt;Thanks to high pixel density devices like the 3rd generation iPad and the new MacBook Pro with Retina display, it encouraged me to find solutions on how to make my icons look crisp.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;ll discuss about a solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-face&lt;/code&gt; css rule.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll discuss about a solution in which you create a font library with your icons as glyphs &lt;sup id='fnref:1'&gt;&lt;a rel='footnote' href='#fn:1'&gt;1&lt;/a&gt;&lt;/sup&gt; and then use them as fonts in the &lt;code&gt;@font-face&lt;/code&gt; css rule.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;
 
@@ -219,7 +219,7 @@
 
 &lt;h2 id='installation'&gt;Installation&lt;/h2&gt;
 
-&lt;p&gt;We&amp;#8217;ll be using Inkscape to define our &lt;a href='http://en.wikipedia.org/wiki/Glyph'&gt;glyphs&lt;/a&gt; in an SVG file. Installing this is pretty straightforward so go ahead and download it &lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;#8217;ll be using Inkscape to define our &lt;a href='http://en.wikipedia.org/wiki/Glyph'&gt;glyphs&lt;/a&gt; in an SVG file. Installing this is pretty straightforward so go ahead and download it &lt;sup id='fnref:2'&gt;&lt;a rel='footnote' href='#fn:2'&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;Fontforge is going to be responsible for converting our SVG file to different formats (ttf, otf, woff, etc.).&lt;/p&gt;
 
@@ -361,13 +361,13 @@ a.cool.icon:after {
 &lt;/blockquote&gt;
 &lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
 &lt;p&gt;You can see an example of this technique in &lt;a href='https://github.com/FortAwesome/Font-Awesome'&gt;FontAwesome&lt;/a&gt;&amp;#8217;s &lt;a href='http://fortawesome.github.com/Font-Awesome/'&gt;demo page&lt;/a&gt;.&lt;/p&gt;
-&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
+&lt;a rev='footnote' href='#fnref:1'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
 &lt;p&gt;Installing this requires X11 in your machine if you&amp;#8217;re on a Mac OS.&lt;/p&gt;
-&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+&lt;a rev='footnote' href='#fnref:2'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>The Golden Rectangle</title>
-    <link href="/2012/07/14/golden-rectangle-in-web-design.html" rel="alternate"/>
+    <link rel="alternate" href="/2012/07/14/golden-rectangle-in-web-design.html"/>
     <id>/2012/07/14/golden-rectangle-in-web-design.html</id>
     <published>2012-07-14</published>
     <updated>2012-07-14</updated>
@@ -385,7 +385,7 @@ a.cool.icon:after {
 
 &lt;h2 id='design_and_mathematics'&gt;Design and Mathematics&lt;/h2&gt;
 
-&lt;p&gt;I used to think that being able to apply proportion and rhythm in design is based on one&amp;#8217;s innate ability (and/or experience). However true for some people&lt;sup id='fnref:1'&gt;&lt;a href='#fn:1' rel='footnote'&gt;1&lt;/a&gt;&lt;/sup&gt;, it turns out that you can be scientific/mathematical towards this problem and still attain a visually pleasing result&lt;sup id='fnref:2'&gt;&lt;a href='#fn:2' rel='footnote'&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;I used to think that being able to apply proportion and rhythm in design is based on one&amp;#8217;s innate ability (and/or experience). However true for some people&lt;sup id='fnref:1'&gt;&lt;a rel='footnote' href='#fn:1'&gt;1&lt;/a&gt;&lt;/sup&gt;, it turns out that you can be scientific/mathematical towards this problem and still attain a visually pleasing result&lt;sup id='fnref:2'&gt;&lt;a rel='footnote' href='#fn:2'&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#8217;s take a look at the &lt;a href='http://en.wikipedia.org/wiki/Golden_ratio'&gt;Golden Ratio&lt;/a&gt;.&lt;/p&gt;
 
@@ -443,13 +443,13 @@ sidebar = 366.49....&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I personally think that Using grids can sometimes feel a bit restricting. Especially when trying to be different from standard layouts. But then it also trains the designer to become disciplined in terms of his workflow and creates a middleground framework that teams can use to convey their ideas collaboratively.&lt;/p&gt;
 &lt;div class='footnotes'&gt;&lt;hr /&gt;&lt;ol&gt;&lt;li id='fn:1'&gt;
 &lt;p&gt;Designers who can &amp;#8216;guestimate&amp;#8217; a layout that still looks aesthetically proportionate.&lt;/p&gt;
-&lt;a href='#fnref:1' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
+&lt;a rev='footnote' href='#fnref:1'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;li id='fn:2'&gt;
 &lt;p&gt;While creativity still plays a vital role in most things, technical knowledge is essential too.&lt;/p&gt;
-&lt;a href='#fnref:2' rev='footnote'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
+&lt;a rev='footnote' href='#fnref:2'&gt;&amp;#8617;&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content>
   </entry>
   <entry>
     <title>Hello, Universe.</title>
-    <link href="/2012/07/11/welcome-to-my-blog.html" rel="alternate"/>
+    <link rel="alternate" href="/2012/07/11/welcome-to-my-blog.html"/>
     <id>/2012/07/11/welcome-to-my-blog.html</id>
     <published>2012-07-11</published>
     <updated>2012-07-11</updated>
