@@ -51,7 +51,7 @@
 &lt;p&gt;As a specie, we shouldn&amp;#8217;t put all our eggs into one basket. It&amp;#8217;s always better to spread humanity to the stars and colonize inhabitable worlds.&lt;/p&gt;
 
 &lt;p&gt;If you weren&amp;#8217;t able to watch the livestream earlier, here&amp;#8217;s a quick recap of what happened (along with some cinematic touch!):&lt;/p&gt;
-&lt;iframe width='560' height='315' src='http://www.youtube.com/embed/N9hXqzkH7YA' frameborder='0' allowfullscreen='1'&gt; &lt;/iframe&gt;
+&lt;iframe allowfullscreen='1' frameborder='0' height='315' width='560' src='http://www.youtube.com/embed/N9hXqzkH7YA'&gt; &lt;/iframe&gt;
 &lt;p&gt;I love how NASA&amp;#8217;s approach in popularizing this to the mainstream audience. I think it&amp;#8217;s a good way into getting people interested in space again.&lt;/p&gt;
 
 &lt;p&gt;NASA, you are truly a force of nature. May your budget from the government increase and produce more work that makes the humanity proud and stand united.&lt;/p&gt;
@@ -145,7 +145,7 @@
   background-position: 0 -300px; }&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;If we put it all together:&lt;/p&gt;
-&lt;div style='overflow: hidden; width:100%; height: 450px;'&gt;&lt;iframe width='100%' height='450' src='http://bl.ocks.org/d/3156125/' frameborder='0'&gt; &lt;/iframe&gt;&lt;/div&gt;
+&lt;div style='overflow: hidden; width:100%; height: 450px;'&gt;&lt;iframe frameborder='0' height='450' width='100%' src='http://bl.ocks.org/d/3156125/'&gt; &lt;/iframe&gt;&lt;/div&gt;
 &lt;p&gt;If you&amp;#8217;re on a high-density display, you can view this &lt;a href='http://bl.ocks.org/d/3156125/'&gt;live sample&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id='what_this_technique_accomplishes'&gt;What this technique accomplishes&lt;/h2&gt;
