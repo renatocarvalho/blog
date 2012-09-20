@@ -61,7 +61,7 @@ Now go ahead and create your icons in either Illustrator or Inkscape. They need 
 Creating the font library in Inkscape {#font-mapping}
 -----------------------------------------------------
 
-Open up Illustrator and create a 1000px by 1000px blank document. Then choose `File -> Import` or `ctrl+i` and choose the `icons-lib.svg` file we saved earlier.
+Open up Inkspace and create a 1000px by 1000px blank document. Then choose `File -> Import` or `ctrl+i` and choose the `icons-lib.svg` file we saved earlier.
 
 1. Open up `Text -> SVG Font Editor`.
 2. On the SVG Font Editor panel, Click `new` then set the family name to `CoolFonts` (click the Font 1 name on the left side first)
