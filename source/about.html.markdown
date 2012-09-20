@@ -14,7 +14,8 @@ Skill set
 - HTML5 development (canvas, audio, video)
 - JavaScript/CoffeeScript
 - node.js with express.js
-- User-interface design
+- User Interface Design
+- User Experience Design
 - Data visualization design and animation
 - Wireframing to High Fidelity Mock-ups
 - Responsive web design (try resizing this page!)
